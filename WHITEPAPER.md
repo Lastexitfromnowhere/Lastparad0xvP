@@ -87,6 +87,6 @@ By decentralizing internet access, incentivizing participation, and ensuring pri
 - 🌐 Website: [https://lastparadox.xyz](https://lastparadox.xyz)  
 - 📄 Tokenomics: [TOKENOMICS.md](./TOKENOMICS.md)  
 - 🎨 NFT Presale: [https://mint.lastparadox.xyz](https://mint.lastparadox.xyz)  
-- 💬 Discord : (https://discord.gg/w4xvwUQg)  
-- 🐦 X/Twitter: [link]  
-- 📂 GitHub: [https://github.com/lastparadox](https://github.com/lastparadox)  
+- 💬 [Discord](https://discord.gg/w4xvwUQg)  
+- 🐦 [X (Twitter)](https://x.com/LastParadox__)
+- 📂 [GitHub](https://github.com/Lastexitfromnowhere)
