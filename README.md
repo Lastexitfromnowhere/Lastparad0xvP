@@ -1,6 +1,6 @@
 # 🌌 LastParadox – Decentralized VPN Network
 
-![LastParadox Banner](https://lastparadox.xyz/354.png)  
+![LastParadox Banner](https://freeimage.host/i/K9fsmF9) 
 *(Decentralized VPN powered by WireGuard + DHT, integrated with Solana & RWRD tokenomics)*
 
 ---
