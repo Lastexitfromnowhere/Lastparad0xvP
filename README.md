@@ -33,9 +33,9 @@ Frontend (Vercel, React/Tauri) --> Backend (VPS, Node.js API) --> DHT + WireGuar
 ## 📄 Resources
 
 - [🌐 Official Website](https://lastparadox.xyz)  
-- [📖 Whitepaper](https://github.com/Lastexitfromnowhere/whitepaper) *(Markdown or PDF)*  
-- [📊 Tokenomics](https://github.com/Lastexitfromnowhere/tokenomics) *(breakdown of RWRD utility & supply)*  
-- [🎨 Pitch Deck](https://github.com/Lastexitfromnowhere/pitchdeck) *(PDF/Google Slides)*  
+- [📖 Whitepaper](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/WHITEPAPER.md)
+- [📊 Tokenomics](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/TOKENOMICS.md)
+
 
 ---
 
