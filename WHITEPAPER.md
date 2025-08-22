@@ -34,35 +34,58 @@ Our mission is to **give back control of the internet to its users** by providin
 
 ## 5. Token Utility
 - **$RWRD Token** is the backbone of the LastParadox ecosystem:
-  - Payment for VPN services.
-  - Rewards for node operators.
-  - Governance (voting on protocol upgrades, treasury, etc.).
-  - Staking to secure the network.
+  - Payment for VPN services.  
+  - Rewards for node operators.  
+  - Governance (voting on protocol upgrades, treasury, etc.).  
+  - Staking to secure the network.  
+  - Exclusive perks for NFT presale participants and community quests.  
 
 ---
 
 ## 6. Tokenomics
-- **Total Supply:** 1,000,000,000 $RWRD  
-- **Distribution:**
-  - 40% Community rewards (staking + node operators)  
-  - 20% Presale & Public Sale  
-  - 20% Team & Advisors (vesting)  
-  - 10% Treasury & Partnerships  
-  - 10% Liquidity Provision  
+- **Total Supply:** 1,000,000,000 $RWRD (fixed, no minting)  
 
-*(See `TOKENOMICS.md` for full breakdown.)*
+### Distribution
+| Category               | Percentage | Allocation (RWRD)    | Vesting / Notes |
+|-------------------------|------------|-----------------------|-----------------|
+| Community & Rewards     | 40%        | 400,000,000           | Emissions over 5 years for staking & node operators |
+| Bonding Curve Launch    | 10%        | 100,000,000           | Distributed via LetsBonk → generates auto LP on Raydium |
+| NFT Presale Airdrop     | 2%         | 20,000,000            | 3,000 NFT holders (6,666 RWRD each), vested over 12 months |
+| Team & Advisors         | 15%        | 150,000,000           | 12-month cliff, then vesting over 36 months |
+| Liquidity Provision     | 10%        | 100,000,000           | Strengthen DEX/CEX liquidity after launch |
+| Marketing & Partnerships| 5%         | 50,000,000            | Growth initiatives, listings, and collaborations |
+| Reserve / Treasury      | 5%         | 50,000,000            | Controlled by DAO governance |
 
 ---
 
-## 7. Roadmap
-**Q3 2025** – MVP release, presale access NFTs  
+## 7. NFT Presale
+- **Total Supply:** 3,000 NFT Presale Passes  
+- **Price:** 0.05 SOL per NFT  
+- **Benefits:**  
+  - Guaranteed airdrop of **6,666 RWRD**, vested over 12 months.  
+  - VIP Discord role, governance priority, beta VPN access.  
+- **Vesting Schedule:**  
+  - 25% unlocked at TGE (end of mint).  
+  - 25% after 3 months.  
+  - 25% after 6 months.  
+  - 25% after 12 months.  
+
+⚖️ **Why vesting?**  
+- Protects holders: prevents immediate dumps that devalue early support.  
+- Protects the project: ensures gradual release of tokens and long-term engagement.  
+- Builds sustainability: creates space for **future NFT events and community quests** to release additional RWRD.  
+
+---
+
+## 8. Roadmap
+**Q3 2025** – MVP release, NFT presale & bonding curve launch  
 **Q4 2025** – Mainnet beta, staking rewards  
 **Q1 2026** – Governance launch  
 **Q2 2026** – Mobile apps, marketplace for bandwidth sharing  
 
 ---
 
-## 8. Governance
+## 9. Governance
 LastParadox is community-driven. $RWRD holders will vote on:
 - Network upgrades.  
 - Treasury fund allocation.  
@@ -70,23 +93,26 @@ LastParadox is community-driven. $RWRD holders will vote on:
 
 ---
 
-## 9. Security & Compliance
+## 10. Security & Compliance
 - **Open-source code** hosted on GitHub for full transparency.  
 - **Audits** before mainnet release.  
 - **Legal disclaimers** to protect node operators from liability.  
+- **Vested distributions** (NFT, Team) to protect against price manipulation.  
 
 ---
 
-## 10. Conclusion
+## 11. Conclusion
 LastParadox is more than just a VPN – it’s a **movement for digital freedom**.  
-By decentralizing internet access, incentivizing participation, and ensuring privacy, LastParadox empowers users worldwide to reclaim control of their online experience.
+By decentralizing internet access, incentivizing participation, and ensuring privacy, LastParadox empowers users worldwide to reclaim control of their online experience.  
+
+The $RWRD token combines a **fair NFT presale**, a **bonding curve launch for liquidity and visibility**, and a **sustainable reward system** – creating a long-term ecosystem for both users and node operators.
 
 ---
 
-## 11. Links
+## 12. Links
 - 🌐 Website: [https://lastparadox.xyz](https://lastparadox.xyz)  
 - 📄 Tokenomics: [TOKENOMICS.md](./TOKENOMICS.md)  
 - 🎨 NFT Presale: [https://mint.lastparadox.xyz](https://mint.lastparadox.xyz)  
 - 💬 [Discord](https://discord.gg/w4xvwUQg)  
-- 🐦 [X (Twitter)](https://x.com/LastParadox__)
-- 📂 [GitHub](https://github.com/Lastexitfromnowhere)
+- 🐦 [X (Twitter)](https://x.com/LastParadox__)  
+- 📂 [GitHub](https://github.com/Lastexitfromnowhere)  
