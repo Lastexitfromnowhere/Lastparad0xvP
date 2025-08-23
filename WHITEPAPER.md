@@ -46,29 +46,37 @@ Our mission is to **give back control of the internet to its users** by providin
 - **Total Supply:** 1,000,000,000 $RWRD (fixed, no minting)  
 
 ### Distribution
-| Category               | Percentage | Allocation (RWRD)    | Vesting / Notes |
-|-------------------------|------------|-----------------------|-----------------|
-| Community & Rewards     | 40%        | 400,000,000           | Emissions over 5 years for staking & node operators |
-| Bonding Curve Launch    | 10%        | 100,000,000           | Distributed via LetsBonk → generates auto LP on Raydium |
-| NFT Presale Airdrop     | 2%         | 20,000,000            | 3,000 NFT holders (6,666 RWRD each), vested over 12 months |
-| Team & Advisors         | 15%        | 150,000,000           | 12-month cliff, then vesting over 36 months |
-| Liquidity Provision     | 10%        | 100,000,000           | Strengthen DEX/CEX liquidity after launch |
-| Marketing & Partnerships| 5%         | 50,000,000            | Growth initiatives, listings, and collaborations |
-| Reserve / Treasury      | 5%         | 50,000,000            | Controlled by DAO governance |
+| Category                | Percentage | Allocation (RWRD) | Vesting / Notes |
+|--------------------------|------------|-------------------|-----------------|
+| Community & Rewards      | 40%        | 400,000,000       | Distributed over 5 years to stakers & node operators |
+| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 RWRD each), vested over 12 months |
+| Team & Advisors          | 15%        | 150,000,000       | 12-month cliff, then 36-month vesting |
+| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with only 0.1% (1,000,000 RWRD), progressively increased by team & contributors |
+| Marketing & Partnerships | 8%         | 80,000,000        | Listings, campaigns, partnerships |
+| Reserve / Treasury       | 10%        | 100,000,000       | Managed by DAO governance |
+| Early Contributors       | 10%        | 100,000,000       | Incentives, uptime rewards, early supporter programs |
 
 ---
 
 ## 7. NFT Presale
 - **Total Supply:** 3,000 NFT Presale Passes  
 - **Price:** 0.05 SOL per NFT  
-- **Benefits:**  
-  - Guaranteed airdrop of **6,666 RWRD**, vested over 12 months.  
-  - VIP Discord role, governance priority, beta VPN access.  
-- **Vesting Schedule:**  
-  - 25% unlocked at TGE (end of mint).  
-  - 25% after 3 months.  
-  - 25% after 6 months.  
-  - 25% after 12 months.  
+
+### Benefits
+- Guaranteed airdrop of **6,666 RWRD**, vested over 12 months.  
+- VIP Discord role, governance priority, beta VPN access.  
+
+### Liquidity Strategy
+- All SOL raised from NFT sales (~150 SOL if sold out) will be directed to the liquidity pool.  
+- **50 SOL** kept in cold wallet (security reserve).  
+- **100 SOL** paired with **1M RWRD (0.1% supply)** to seed the Raydium LP.  
+- Pool gradually reinforced by the team and contributors to strengthen liquidity and prevent whale dominance.  
+
+### Vesting Schedule
+- 25% unlocked at TGE (end of mint).  
+- 25% after 3 months.  
+- 25% after 6 months.  
+- 25% after 12 months.  
 
 ⚖️ **Why vesting?**  
 - Protects holders: prevents immediate dumps that devalue early support.  
@@ -78,7 +86,7 @@ Our mission is to **give back control of the internet to its users** by providin
 ---
 
 ## 8. Roadmap
-**Q3 2025** – MVP release, NFT presale & bonding curve launch  
+**Q3 2025** – MVP release, NFT presale & initial liquidity seeding  
 **Q4 2025** – Mainnet beta, staking rewards  
 **Q1 2026** – Governance launch  
 **Q2 2026** – Mobile apps, marketplace for bandwidth sharing  
@@ -98,6 +106,7 @@ LastParadox is community-driven. $RWRD holders will vote on:
 - **Audits** before mainnet release.  
 - **Legal disclaimers** to protect node operators from liability.  
 - **Vested distributions** (NFT, Team) to protect against price manipulation.  
+- **Minimal initial liquidity** with gradual reinforcement → reduces dump risks.  
 
 ---
 
@@ -105,7 +114,7 @@ LastParadox is community-driven. $RWRD holders will vote on:
 LastParadox is more than just a VPN – it’s a **movement for digital freedom**.  
 By decentralizing internet access, incentivizing participation, and ensuring privacy, LastParadox empowers users worldwide to reclaim control of their online experience.  
 
-The $RWRD token combines a **fair NFT presale**, a **bonding curve launch for liquidity and visibility**, and a **sustainable reward system** – creating a long-term ecosystem for both users and node operators.
+The $RWRD token combines a **fair NFT presale**, **progressive liquidity injection** into Raydium, and a **sustainable reward system** – creating a long-term ecosystem for both users and node operators.  
 
 ---
 
