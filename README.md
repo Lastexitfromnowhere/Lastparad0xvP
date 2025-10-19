@@ -23,5 +23,33 @@ Our mission: **return control of the internet to its users** — no central serv
 
 ---
 
-## 🛠️ Architecture
+**Key components**
+- 🖥 **App-Tauri**: local client (Host/Client), status LEDs, rewards panel  
+- ⚙️ **LP-Daemon**: manages Tor circuits, publishes/reads peers via DHT, exposes REST  
+- 🌍 **Wind-Frontend**: dashboard (stats, rewards, staking)
+
+---
+
+## 📄 Resources
+
+- [🌐 Official Website](https://lastparadox.xyz)  
+- [📖 Whitepaper](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/WHITEPAPER.md)  
+- [📊 Tokenomics](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/TOKENOMICS.md)  
+- [🔐 ZK Auth Portal](https://zk.lastparadox.xyz)
+
+---
+
+## 🤝 Community
+
+- [Discord](https://discord.gg/w4xvwUQg)  
+- [X (Twitter)](https://x.com/LastParadox__)  
+- [GitHub](https://github.com/Lastexitfromnowhere)
+
+---
+
+## 📜 License
+
+MIT License © 2025 LastParadox
+
+---
 
