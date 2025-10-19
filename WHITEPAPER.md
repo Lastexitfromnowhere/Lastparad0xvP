@@ -1,126 +1,139 @@
-# LastParadox Whitepaper
+# 🧠 LastParadox Whitepaper
 
 ## 1. Introduction
-The internet has become increasingly centralized, exposing users to censorship, surveillance, and security risks.  
-**LastParadox** is a decentralized VPN (dVPN) powered by **WireGuard** and **Distributed Hash Tables (DHT)**, ensuring privacy, resilience, and true peer-to-peer networking.  
+The internet is increasingly centralized, leaving users exposed to censorship, surveillance, and systemic vulnerabilities.  
+**LastParadox** is a **fully decentralized VPN (dVPN)** powered by **Tor**, **Distributed Hash Tables (DHT)**, and **Zero-Knowledge (ZK) authentication**, ensuring privacy, resilience, and true peer-to-peer connectivity.  
 
-Our mission is to **give back control of the internet to its users** by providing secure, censorship-resistant, and community-driven connectivity.
+Our mission is to **give back control of the internet to its users** by creating a censorship-resistant, anonymous, and community-driven private network.
 
 ---
 
 ## 2. Problem Statement
-- Traditional VPNs rely on centralized servers → Single point of failure & risk of seizure.  
-- Users lack transparency → They must trust providers not to log or misuse their data.  
-- Node operators face legal risks without proper decentralization & protection.  
+- Traditional VPNs rely on centralized servers → single points of failure, surveillance, or legal seizure.  
+- Users must **trust** providers not to log or misuse their traffic.  
+- Node operators are **unprotected** and exposed to liability in centralized infrastructures.  
+- Privacy tools often **require identity or KYC**, which contradicts anonymity principles.  
 
 ---
 
 ## 3. The Solution: LastParadox
-- **Decentralized architecture** using DHT to connect peers without central servers.  
-- **WireGuard tunnels** for secure and fast connections.  
-- **Multi-hop routing** to protect node operators from liability.  
-- **Staking and rewards** system to incentivize node operators and users.  
+**LastParadox** removes centralized trust by combining **Tor onion routing**, **DHT-based node discovery**, and **ZK-SNARK authentication**.
+
+### Key Principles:
+- **Tor circuits** for fully encrypted, onion-layered tunneling between peers.  
+- **DHT (Distributed Hash Table)** for peer discovery — no central server or coordinator.  
+- **Zero-Knowledge Proofs** for private, verifiable user authentication through [zk.lastparadox.xyz](https://zk.lastparadox.xyz).  
+- **Reward-based participation**, incentivizing uptime, stability, and bandwidth contribution.  
+
+This approach provides **true anonymity**, **resistance to censorship**, and **self-sovereign privacy**.
 
 ---
 
 ## 4. Core Features
-- 🌐 **Censorship Resistance** – Unstoppable access, no single point of failure.  
-- 🔒 **Strong Privacy** – End-to-end encrypted tunnels with WireGuard.  
-- ⚡ **Performance** – Optimized routing for low latency and high bandwidth.  
-- 💰 **Rewards System** – Node operators earn tokens based on uptime and traffic.  
-- 🛡️ **Legal Protection Layer** – Traffic obfuscation & multi-hop to shield node hosts.  
+- 🧅 **Tor-based Routing** – Native `.onion` circuits provide strong encryption and traffic obfuscation.  
+- 🌍 **DHT Discovery** – Peer-to-peer network structure with no central lookup or authority.  
+- 🧠 **ZK Authentication** – Users prove identity & access rights via **zk-SNARKs**, without revealing data.  
+- 💸 **Reward Mechanism** – Node operators earn **RWRD tokens** based on uptime and verified participation.  
+- 🛡 **Community Governance** – Token holders steer network evolution, policies, and treasury.  
 
 ---
 
 ## 5. Token Utility
-- **$RWRD Token** is the backbone of the LastParadox ecosystem:
-  - Payment for VPN services.  
-  - Rewards for node operators.  
-  - Governance (voting on protocol upgrades, treasury, etc.).  
-  - Staking to secure the network.  
-  - Exclusive perks for NFT presale participants and community quests.  
+The **$RWRD Token** is the core of the LastParadox ecosystem. It powers:
+- Payments for VPN access and premium routing.  
+- Rewards for node operators and contributors.  
+- Staking to boost uptime rewards and governance weight.  
+- DAO governance — proposals, upgrades, and network policy voting.  
+- Exclusive access for NFT holders and early supporters.
 
 ---
 
 ## 6. Tokenomics
-- **Total Supply:** 1,000,000,000 $RWRD (fixed, no minting)  
+- **Total Supply:** 1,000,000,000 $RWRD (fixed, no future minting)
 
 ### Distribution
 | Category                | Percentage | Allocation (RWRD) | Vesting / Notes |
 |--------------------------|------------|-------------------|-----------------|
-| Community & Rewards      | 40%        | 400,000,000       | Distributed over 5 years to stakers & node operators |
-| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 RWRD each), vested over 12 months |
-| Team & Advisors          | 15%        | 150,000,000       | 12-month cliff, then 36-month vesting |
-| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with only 0.1% (1,000,000 RWRD), progressively increased by team & contributors |
-| Marketing & Partnerships | 8%         | 80,000,000        | Listings, campaigns, partnerships |
+| Community & Rewards      | 40%        | 400,000,000       | Distributed over 5 years to node operators & stakers |
+| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 RWRD each), 12-month vesting |
+| Team & Advisors          | 15%        | 150,000,000       | 12-month cliff + 36-month vesting |
+| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with 0.1% (1M RWRD), increased gradually |
+| Marketing & Partnerships | 8%         | 80,000,000        | Exchange listings, collabs, campaigns |
 | Reserve / Treasury       | 10%        | 100,000,000       | Managed by DAO governance |
-| Early Contributors       | 10%        | 100,000,000       | Incentives, uptime rewards, early supporter programs |
+| Early Contributors       | 10%        | 100,000,000       | Beta testers, uptime pioneers, early supporters |
 
 ---
 
 ## 7. NFT Presale
-- **Total Supply:** 3,000 NFT Presale Passes  
-- **Price:** 0.05 SOL per NFT  
+- **Supply:** 3,000 NFT Presale Passes  
+- **Price:** 0.05 SOL each  
 
 ### Benefits
 - Guaranteed airdrop of **6,666 RWRD**, vested over 12 months.  
-- VIP Discord role, governance priority, beta VPN access.  
+- Access to **beta dVPN**, private Discord channels, and governance perks.  
+- Future NFT staking & yield multipliers for active hosts.  
 
 ### Liquidity Strategy
-- All SOL raised from NFT sales (~150 SOL if sold out) will be directed to the liquidity pool.  
-- **50 SOL** kept in cold wallet (security reserve).  
-- **100 SOL** paired with **1M RWRD (0.1% supply)** to seed the Raydium LP.  
-- Pool gradually reinforced by the team and contributors to strengthen liquidity and prevent whale dominance.  
+- All SOL raised from the presale funds liquidity and security reserves.  
+- **50 SOL** retained as cold storage reserve.  
+- **100 SOL + 1M RWRD** seed the initial **Raydium LP** (0.1% of supply).  
+- LP progressively reinforced by DAO and community contributions.
 
 ### Vesting Schedule
-- 25% unlocked at TGE (end of mint).  
-- 25% after 3 months.  
-- 25% after 6 months.  
-- 25% after 12 months.  
+| Unlock Stage | Percentage | Timeframe |
+|---------------|-------------|------------|
+| TGE (mint end) | 25% | Immediate |
+| After 3 months | 25% | — |
+| After 6 months | 25% | — |
+| After 12 months | 25% | Final unlock |
 
-⚖️ **Why vesting?**  
-- Protects holders: prevents immediate dumps that devalue early support.  
-- Protects the project: ensures gradual release of tokens and long-term engagement.  
-- Builds sustainability: creates space for **future NFT events and community quests** to release additional RWRD.  
+⚖️ **Why Vesting?**  
+To ensure fair distribution, price stability, and long-term engagement while protecting the network from speculative volatility.
 
 ---
 
 ## 8. Roadmap
-**Q3 2025** – MVP release, NFT presale & initial liquidity seeding  
-**Q4 2025** – Mainnet beta, staking rewards  
-**Q1 2026** – Governance launch  
-**Q2 2026** – Mobile apps, marketplace for bandwidth sharing  
+**Q3 2025** – MVP release (Tor + DHT core), NFT presale & initial liquidity  
+**Q4 2025** – zkAuth integration ([zk.lastparadox.xyz](https://zk.lastparadox.xyz)) & reward system  
+**Q1 2026** – Governance launch (DAO + staking dashboard)  
+**Q2 2026** – Mobile clients, bandwidth marketplace & public node incentives  
 
 ---
 
 ## 9. Governance
-LastParadox is community-driven. $RWRD holders will vote on:
-- Network upgrades.  
-- Treasury fund allocation.  
-- Economic parameters (rewards, staking rates, etc.).  
+LastParadox is a **community-governed network**.  
+$RWRD holders vote on:
+- Protocol upgrades and technical direction.  
+- Reward algorithms & staking parameters.  
+- Treasury and liquidity allocations.  
+- Node reputation models and DHT rules.  
+
+Governance evolves as the protocol decentralizes further through DAO smart contracts.
 
 ---
 
 ## 10. Security & Compliance
-- **Open-source code** hosted on GitHub for full transparency.  
-- **Audits** before mainnet release.  
-- **Legal disclaimers** to protect node operators from liability.  
-- **Vested distributions** (NFT, Team) to protect against price manipulation.  
-- **Minimal initial liquidity** with gradual reinforcement → reduces dump risks.  
+- **Tor routing & encryption** ensure data anonymity by design.  
+- **ZK authentication** prevents identity exposure while ensuring access legitimacy.  
+- **Open-source transparency** — full code on GitHub.  
+- **Audits** performed before mainnet launch.  
+- **Vested token distribution** prevents manipulation and dumping.  
+- **Gradual liquidity scaling** mitigates volatility risks.  
 
 ---
 
 ## 11. Conclusion
-LastParadox is more than just a VPN – it’s a **movement for digital freedom**.  
-By decentralizing internet access, incentivizing participation, and ensuring privacy, LastParadox empowers users worldwide to reclaim control of their online experience.  
+**LastParadox** is not just another VPN — it’s a **movement for digital freedom**.  
+By merging **Tor privacy**, **DHT decentralization**, and **ZK-proof authentication**, it empowers users to reclaim internet sovereignty.
 
-The $RWRD token combines a **fair NFT presale**, **progressive liquidity injection** into Raydium, and a **sustainable reward system** – creating a long-term ecosystem for both users and node operators.  
+The **RWRD token** aligns incentives between users, hosts, and governance — creating a sustainable, privacy-first, community-driven ecosystem for the future of private connectivity.
 
 ---
 
 ## 12. Links
 - 🌐 Website: [https://lastparadox.xyz](https://lastparadox.xyz)  
 - 📄 Tokenomics: [TOKENOMICS.md](./TOKENOMICS.md)  
+- 🔐 ZK Portal: [https://zk.lastparadox.xyz](https://zk.lastparadox.xyz)  
 - 🎨 NFT Presale: [https://mint.lastparadox.xyz](https://mint.lastparadox.xyz)  
 - 💬 [Discord](https://discord.gg/w4xvwUQg)  
 - 🐦 [X (Twitter)](https://x.com/LastParadox__)  
