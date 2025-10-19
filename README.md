@@ -1,4 +1,4 @@
-# 🌌 LastParadox – Decentralized VPN Network
+
 
 ![LastParadox Banner](https://raw.githubusercontent.com/Lastexitfromnowhere/Lastparad0xvP/refs/heads/main/banner.png)  
 *(Decentralized VPN powered by Tor + DHT + Zero-Knowledge Proofs, integrated with Solana & LPRX tokenomics)*
