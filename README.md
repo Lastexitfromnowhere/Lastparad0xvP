@@ -49,7 +49,8 @@ Our mission: **return control of the internet to its users** — no central serv
 
 ## 📜 License
 
-MIT License © 2025 LastParadox
+MIT License © 2025 LastParadox  
+contact@lastparadox.xyz
 
 ---
 
