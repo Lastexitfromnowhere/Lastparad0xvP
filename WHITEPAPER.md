@@ -33,13 +33,13 @@ This approach provides **true anonymity**, **resistance to censorship**, and **s
 - 🧅 **Tor-based Routing** – Native `.onion` circuits provide strong encryption and traffic obfuscation.  
 - 🌍 **DHT Discovery** – Peer-to-peer network structure with no central lookup or authority.  
 - 🧠 **ZK Authentication** – Users prove identity & access rights via **zk-SNARKs**, without revealing data.  
-- 💸 **Reward Mechanism** – Node operators earn **RWRD tokens** based on uptime and verified participation.  
+- 💸 **Reward Mechanism** – Node operators earn **LPRX tokens** based on uptime and verified participation.  
 - 🛡 **Community Governance** – Token holders steer network evolution, policies, and treasury.  
 
 ---
 
 ## 5. Token Utility
-The **$RWRD Token** is the core of the LastParadox ecosystem. It powers:
+The **$LPRX Token** is the core of the LastParadox ecosystem. It powers:
 - Payments for VPN access and premium routing.  
 - Rewards for node operators and contributors.  
 - Staking to boost uptime rewards and governance weight.  
@@ -49,15 +49,15 @@ The **$RWRD Token** is the core of the LastParadox ecosystem. It powers:
 ---
 
 ## 6. Tokenomics
-- **Total Supply:** 1,000,000,000 $RWRD (fixed, no future minting)
+- **Total Supply:** 1,000,000,000 $LPRX (fixed, no future minting)
 
 ### Distribution
-| Category                | Percentage | Allocation (RWRD) | Vesting / Notes |
+| Category                | Percentage | Allocation (LPRX) | Vesting / Notes |
 |--------------------------|------------|-------------------|-----------------|
 | Community & Rewards      | 40%        | 400,000,000       | Distributed over 5 years to node operators & stakers |
-| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 RWRD each), 12-month vesting |
+| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 LPRX each), 12-month vesting |
 | Team & Advisors          | 15%        | 150,000,000       | 12-month cliff + 36-month vesting |
-| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with 0.1% (1M RWRD), increased gradually |
+| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with 0.1% (1M LPRX), increased gradually |
 | Marketing & Partnerships | 8%         | 80,000,000        | Exchange listings, collabs, campaigns |
 | Reserve / Treasury       | 10%        | 100,000,000       | Managed by DAO governance |
 | Early Contributors       | 10%        | 100,000,000       | Beta testers, uptime pioneers, early supporters |
@@ -69,14 +69,14 @@ The **$RWRD Token** is the core of the LastParadox ecosystem. It powers:
 - **Price:** 0.05 SOL each  
 
 ### Benefits
-- Guaranteed airdrop of **6,666 RWRD**, vested over 12 months.  
+- Guaranteed airdrop of **6,666 LPRX**, vested over 12 months.  
 - Access to **beta dVPN**, private Discord channels, and governance perks.  
 - Future NFT staking & yield multipliers for active hosts.  
 
 ### Liquidity Strategy
 - All SOL raised from the presale funds liquidity and security reserves.  
 - **50 SOL** retained as cold storage reserve.  
-- **100 SOL + 1M RWRD** seed the initial **Raydium LP** (0.1% of supply).  
+- **100 SOL + 1M LPRX** seed the initial **Raydium LP** (0.1% of supply).  
 - LP progressively reinforced by DAO and community contributions.
 
 ### Vesting Schedule
@@ -102,7 +102,7 @@ To ensure fair distribution, price stability, and long-term engagement while pro
 
 ## 9. Governance
 LastParadox is a **community-governed network**.  
-$RWRD holders vote on:
+$LPRX holders vote on:
 - Protocol upgrades and technical direction.  
 - Reward algorithms & staking parameters.  
 - Treasury and liquidity allocations.  
@@ -126,7 +126,7 @@ Governance evolves as the protocol decentralizes further through DAO smart contr
 **LastParadox** is not just another VPN — it’s a **movement for digital freedom**.  
 By merging **Tor privacy**, **DHT decentralization**, and **ZK-proof authentication**, it empowers users to reclaim internet sovereignty.
 
-The **RWRD token** aligns incentives between users, hosts, and governance — creating a sustainable, privacy-first, community-driven ecosystem for the future of private connectivity.
+The **LPRX token** aligns incentives between users, hosts, and governance — creating a sustainable, privacy-first, community-driven ecosystem for the future of private connectivity.
 
 ---
 
