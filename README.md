@@ -1,52 +1,27 @@
 # 🌌 LastParadox – Decentralized VPN Network
 
-![LastParadox Banner](https://raw.githubusercontent.com/Lastexitfromnowhere/Lastparad0xvP/refs/heads/main/banner.png) 
-*(Decentralized VPN powered by WireGuard + DHT, integrated with Solana & RWRD tokenomics)*
+![LastParadox Banner](https://raw.githubusercontent.com/Lastexitfromnowhere/Lastparad0xvP/refs/heads/main/banner.png)  
+*(Decentralized VPN powered by Tor + DHT + Zero-Knowledge Proofs, integrated with Solana & LPRX tokenomics)*
 
 ---
 
 ## 🚀 Vision
 
-**LastParadox** is a decentralized VPN that allows anyone to host a node and contribute to a secure, censorship-resistant infrastructure.  
-Our mission: **return control of the internet to the users**, without centralized intermediaries.
+**LastParadox** is a **decentralized VPN (dVPN)** that empowers users to reclaim internet sovereignty through privacy, anonymity, and peer-to-peer networking.  
+Our mission: **return control of the internet to its users** — no central servers, no intermediaries, no compromise.
 
 ---
 
 ## 🔑 Features
 
-- 🌍 **Decentralized VPN** – built on **WireGuard** + **DHT** for peer-to-peer node discovery.  
-- 🔒 **Privacy & Security** – end-to-end encryption, multi-hop routing, optional DNS filtering.  
-- 🪙 **Blockchain integration (Solana)** – wallet authentication (Phantom, Solflare, Google via Web3Auth).  
-- 🎁 **Rewards** – $RWRD tokens for node hosts (uptime, bandwidth) + daily user rewards.  
-- 📡 **Cross-platform** – Web dashboard, desktop app (Tauri), real-time monitoring.  
+- 🧅 **Tor-based Architecture** – every connection runs through private `.onion` circuits for complete anonymity.  
+- 🌐 **Distributed Hash Table (DHT)** – decentralized peer discovery, no central API or server.  
+- 🔐 **Zero-Knowledge Authentication** – private access via zk-SNARKs powered by [zk.lastparadox.xyz](https://zk.lastparadox.xyz).  
+- 💰 **Rewards System** – earn **$LPRX** for hosting stable, verified Tor nodes.  
+- 🧩 **Blockchain Integration (Solana)** – wallet-based identity, governance, and staking.  
+- 🖥️ **Cross-platform Access** – desktop app (Tauri), dashboard (Vercel), and real-time node monitoring.  
 
 ---
 
 ## 🛠️ Architecture
-Frontend (Vercel, React/Tauri) --> Backend (VPS, Node.js API) --> DHT + WireGuard Daemon
-|--> Blockchain: Solana (auth, NFTs, tokenomics)
-|--> Monitoring: Prometheus / Grafana
 
-
----
-
-## 📄 Resources
-
-- [🌐 Official Website](https://lastparadox.xyz)  
-- [📖 Whitepaper](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/WHITEPAPER.md)
-- [📊 Tokenomics](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/TOKENOMICS.md)
-
-
----
-
-## 🤝 Community
-
-- [Discord](https://discord.gg/w4xvwUQg)  
-- [X (Twitter)](https://x.com/LastParadox__)  
-- [GitHub](https://github.com/Lastexitfromnowhere)
-
----
-
-## 📜 License
-
-MIT License © 2025 LastParadox
