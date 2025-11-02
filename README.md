@@ -51,6 +51,8 @@ Our mission: **return control of the internet to its users** — no central serv
 
 MIT License © 2025 LastParadox  
 contact@lastparadox.xyz
+core.bardage@gmail.com
+ceo : etheve stephane
 
 ---
 
