@@ -93,3 +93,4 @@ MIT License © 2025 LastParadox DAO<br/>
 contact@lastparadox.xyz • core.bardage@gmail.com<br/>
 Founder & CEO: <strong>Etheve Stéphane</strong>
 </p>
+For legal and compliance information, please read the [LEGAL DISCLAIMER](./LEGAL.md).
