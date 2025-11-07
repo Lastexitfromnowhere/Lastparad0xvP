@@ -11,7 +11,7 @@ Decentralized Privacy Network powered by Tor, HyperNodes, HyperBee & Zero-Knowle
 <h2 align="center">🚀 Vision</h2>
 
 <p align="center">
-<strong>LastParadox</strong> is becoming a fully decentralized <strong>Privacy Network DAO</strong>, giving users total sovereignty over their identity and traffic.<br/>
+<strong>LastParadox</strong> is becoming a fully decentralized <strong>Privacy Network DAO</strong>, giving users sovereignty over their identity, traffic, and online privacy.<br/>
 Our mission is simple:
 </p>
 
@@ -21,61 +21,47 @@ Our mission is simple:
 
 <h2 align="center">🔑 Key Features</h2>
 
-<p align="center">
-A modern, decentralized privacy stack combining Tor anonymity, Hyper-core networking, and ZK authentication.
-</p>
+<p align="center">A modern, decentralized privacy stack combining Tor anonymity, Hyper-core networking, and Zero-Knowledge authentication.</p>
 
-- 🧅 **Tor Integration** — privacy by default with `.onion` circuit routing  
-- 🌐 **HyperNodes** — replacing DHT with fast, encrypted P2P routing  
-- 🗄️ **HyperBee Storage** — decentralized metadata and protocol state  
-- 🔐 **Zero-Knowledge Authentication** via zk-SNARKs  
-- 💰 **RWRD Rewards System** for node uptime & contribution  
-- 🛡️ **Premium TUN Mode** — full kernel VPN mode through Tor  
-- 🧩 **DAO Governance** — proposals, voting, treasury, roadmap decisions  
-- 🖥️ **Cross-Platform App** — Tauri desktop client + LP-daemon + static landing page
+- 🧅 <strong>Tor Integration</strong> — privacy by default with <code>.onion</code> circuit routing  
+- 🌐 <strong>HyperNodes</strong> — replacing DHT with encrypted, low-latency P2P routing  
+- 🗄️ <strong>HyperBee Storage</strong> — decentralized metadata & protocol state  
+- 🔐 <strong>Zero-Knowledge Authentication</strong> — zk-SNARK login with no identity  
+- 💰 <strong>RWRD Rewards System</strong> — earn for uptime, hosting & contribution  
+- 🛡️ <strong>Premium TUN Mode</strong> — full kernel VPN through Tor  
+- 🧩 <strong>DAO Governance</strong> — proposals, treasury, voting, protocol upgrades  
+- 🖥️ <strong>Cross-Platform App</strong> — Tauri desktop app + LP-daemon + landing
 
 ---
 
 <h2 align="center">🧱 Architecture Overview</h2>
 
+<p align="center">A distributed privacy network built on the Hyper stack.</p>
+
 <p align="center">
-A distributed privacy network built on top of the Hyper stack.
+<pre>
+
+                   ┌────────────────────────────────────┐
+                   │            LASTPARADOX              │
+                   │   Decentralized Privacy Network DAO │
+                   └────────────────────────────────────┘
+                                 │
+        ┌────────────────────────┴────────────────────────┐
+        │                                                 │
+ HyperNodes (Routing)                         Zero-Knowledge Proofs (Auth)
+        │                                                 │
+        └────────────────────────┬────────────────────────┘
+                                 │
+                         HyperBee Storage
+         (rewards, metadata, nodes, protocol state)
+                                 │
+        ┌────────────────────────┴────────────────────────┐
+        │                                                 │
+       Tor Engine                               RWRD Tokenomics
+   (proxy + kernel TUN)               (rewards, governance, incentives)
+
+</pre>
 </p>
-
-markdown
-Copier le code
-            ┌──────────────────────────────────────┐
-            │             LASTPARADOX               │
-            │   Decentralized Privacy Network DAO   │
-            └──────────────────────────────────────┘
-                            │
-   ┌────────────────────────┴──────────────────────┐
-   │                                               │
-HyperNodes (Routing) Zero-Knowledge Proofs (Auth)
-│ │
-└────────────────────────┬──────────────────────┘
-│
-HyperBee Storage
-(rewards, metadata, nodes, protocol state)
-│
-┌────────────────────────┴──────────────────────┐
-│ │
-Tor Engine RWRD Tokenomics
-(proxy + kernel TUN) (rewards, governance, incentives)
-
-javascript
-Copier le code
-
----
-
-<h2 align="center">🖥 Components</h2>
-
-<p align="center">Core elements of the LastParadox ecosystem.</p>
-
-- **App-Tauri** – user interface, TUN mode, rewards, ZK login  
-- **LP-Daemon** – Tor engine, HyperNode routing, HyperBee sync  
-- **LandingLast** – static landing page + live network status  
-- **Admin Panel** – DAO treasury, oversight, developer tools  
 
 ---
 
@@ -105,5 +91,5 @@ Copier le code
 <p align="center">
 MIT License © 2025 LastParadox DAO<br/>
 contact@lastparadox.xyz • core.bardage@gmail.com<br/>
-CEO & Founder: <strong>Etheve Stéphane</strong>
+Founder & CEO: <strong>Etheve Stéphane</strong>
 </p>
