@@ -1,58 +1,68 @@
 
 
 ![LastParadox Banner](https://raw.githubusercontent.com/Lastexitfromnowhere/Lastparad0xvP/refs/heads/main/banner.png)  
-*(Decentralized VPN powered by Tor + DHT + Zero-Knowledge Proofs, integrated with Solana & LPRX tokenomics)*
+🚀 Vision
 
----
+LastParadox is evolving into a fully decentralized Privacy Network DAO, giving users complete sovereignty over their identity, privacy, and connection.
 
-## 🚀 Vision
+Our mission:
 
-**LastParadox** is a **decentralized VPN (dVPN)** that empowers users to reclaim internet sovereignty through privacy, anonymity, and peer-to-peer networking.  
-Our mission: **return control of the internet to its users** — no central servers, no intermediaries, no compromise.
+build a community-owned, censorship-resistant internet layer
 
----
+— no central servers, no data collection, no intermediaries.
 
-## 🔑 Features
+The network runs on Tor, HyperNodes, HyperBee and Zero-Knowledge authentication.
 
-- 🧅 **Tor-based Architecture** – every connection runs through private `.onion` circuits for complete anonymity.  
-- 🌐 **Distributed Hash Table (DHT)** – decentralized peer discovery, no central API or server.  
-- 🔐 **Zero-Knowledge Authentication** – private access via zk-SNARKs powered by [zk.lastparadox.xyz](https://zk.lastparadox.xyz).  
-- 💰 **Rewards System** – earn **$LPRX** for hosting stable, verified Tor nodes.  
-- 🧩 **Blockchain Integration (Solana)** – wallet-based identity, governance, and staking.  
-- 🖥️ **Cross-platform Access** – desktop app (Tauri), dashboard (Vercel), and real-time node monitoring.  
+🔑 Features
 
----
+🧅 Tor-Integrated Architecture – all connections routed through private .onion circuits for anonymity and obfuscation.
 
-**Key components**
-- 🖥 **App-Tauri**: local client (Host/Client), status LEDs, rewards panel  
-- ⚙️ **LP-Daemon**: manages Tor circuits, publishes/reads peers via DHT, exposes REST  
-- 🌍 **Wind-Frontend**: dashboard (stats, rewards, staking)
+🌐 HyperNodes (DHT replaced) – decentralized peer routing using the Hyper stack (secure, fast, self-replicating).
 
----
+🗄️ HyperBee Storage – distributed metadata (nodes, claims, protocol state) with no central database.
 
-## 📄 Resources
+🔐 Zero-Knowledge Authentication – identity-less login via zk-SNARKs powered by zk.lastparadox.xyz
+.
 
-- [🌐 Official Website](https://lastparadox.xyz)  
-- [📖 Whitepaper](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/WHITEPAPER.md)  
-- [📊 Tokenomics](https://github.com/Lastexitfromnowhere/Lastparad0xvP/blob/main/TOKENOMICS.md)  
-- [🔐 ZK Auth Portal](https://zk.lastparadox.xyz)
+💰 RWRD Rewards – earn RWRD tokens for hosting nodes, uptime, and contributing to the DAO.
 
----
+🛡️ Premium TUN Mode – full kernel VPN mode routing all OS traffic through Tor.
 
-## 🤝 Community
+🧩 DAO Governance – community voting, treasury management, protocol upgrades, and improvement proposals.
 
-- [Discord](https://discord.gg/w4xvwUQg)  
-- [X (Twitter)](https://x.com/LastParadox__)  
-- [GitHub](https://github.com/Lastexitfromnowhere)
+🖥️ Cross-platform Stack – desktop (Tauri), HyperNode daemon, static landing page, and admin tools.
 
----
+Key components
 
-## 📜 License
+🖥 App-Tauri: client interface (Host/Client), TUN toggle, ZK login, rewards panel
 
-MIT License © 2025 LastParadox  
+⚙️ LP-Daemon: Tor engine, HyperNode routing, HyperBee syncing, local services
+
+🌍 LandingLast: static website + live network status (via HyperBee)
+
+📄 Resources
+
+🌐 Official Website
+
+📖 Whitepaper
+
+📊 Tokenomics (RWRD)
+
+🔐 ZK Auth Portal
+
+🤝 Community
+
+Discord
+
+X (Twitter)
+
+GitHub
+
+📜 License
+
+MIT License © 2025 LastParadox DAO
 contact@lastparadox.xyz
+
 core.bardage@gmail.com
-ceo : etheve stephane
 
----
-
+CEO & Founder: Etheve Stéphane
