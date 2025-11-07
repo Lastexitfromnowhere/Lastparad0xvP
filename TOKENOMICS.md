@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://landing-last.vercel.app/assets/banner2.png" alt="LastParadox Banner" width="100%"/>
+</p>
 # 💠 LastParadox Tokenomics (RWRD)
 
 LastParadox is transitioning into a **fully decentralized DAO**.  
