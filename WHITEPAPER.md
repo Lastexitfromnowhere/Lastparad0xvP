@@ -1,140 +1,154 @@
 # 🧠 LastParadox Whitepaper
 
-## 1. Introduction
-The internet is increasingly centralized, leaving users exposed to censorship, surveillance, and systemic vulnerabilities.  
-**LastParadox** is a **fully decentralized VPN (dVPN)** powered by **Tor**, **Distributed Hash Tables (DHT)**, and **Zero-Knowledge (ZK) authentication**, ensuring privacy, resilience, and true peer-to-peer connectivity.  
+> **Status:** Protocol in active development.  
+> **Key change:** Zero-Knowledge authentication now runs **locally inside the Desktop app** (no web dashboard).  
+> **Architecture:** HyperNodes + HyperBee + Tor.  
+> **Premium:** Full-kernel TUN mode available for Premium users.
 
-Our mission is to **give back control of the internet to its users** by creating a censorship-resistant, anonymous, and community-driven private network.
+---
+
+## 1. Introduction
+The public internet is increasingly centralized, exposing users to surveillance, censorship, and vendor lock-in.  
+**LastParadox** is a **decentralized VPN (dVPN)** that replaces central servers with a **peer-powered mesh** built on **Tor**, **HyperNodes**, and **HyperBee**.  
+
+Our mission is simple: **give back control of connectivity to the users** — privacy-first, censorship-resistant, and community-governed.
 
 ---
 
 ## 2. Problem Statement
-- Traditional VPNs rely on centralized servers → single points of failure, surveillance, or legal seizure.  
-- Users must **trust** providers not to log or misuse their traffic.  
-- Node operators are **unprotected** and exposed to liability in centralized infrastructures.  
-- Privacy tools often **require identity or KYC**, which contradicts anonymity principles.  
+- **Centralized VPNs** are single points of failure and trust.  
+- Users must **trust promises** (“no logs”) without verifiability.  
+- Operators are exposed to **legal and infrastructure risk**.  
+- Dashboards and cloud backends create **unnecessary data surfaces**.
 
 ---
 
 ## 3. The Solution: LastParadox
-**LastParadox** removes centralized trust by combining **Tor onion routing**, **DHT-based node discovery**, and **ZK-SNARK authentication**.
+LastParadox removes centralized trust by fusing:
+- 🧅 **Tor integration** for onion-routed obfuscation and anonymity.  
+- 🧩 **HyperNodes** for distributed, verifiable routing and peer participation.  
+- 📚 **HyperBee** as a tamper-evident, append-only data layer for public, non-sensitive network metadata.  
+- 🧠 **Local Zero-Knowledge Auth**: ZK proofs are generated and verified **inside the Desktop app** — no external portal, no web dashboard.
 
-### Key Principles:
-- **Tor circuits** for fully encrypted, onion-layered tunneling between peers.  
-- **DHT (Distributed Hash Table)** for peer discovery — no central server or coordinator.  
-- **Zero-Knowledge Proofs** for private, verifiable user authentication through [zk.lastparadox.xyz](https://zk.lastparadox.xyz).  
-- **Reward-based participation**, incentivizing uptime, stability, and bandwidth contribution.  
-
-This approach provides **true anonymity**, **resistance to censorship**, and **self-sovereign privacy**.
+**Design principles**
+- **Local-first privacy**: proofs & keys never leave the device unencrypted.  
+- **No central dashboards**: monitoring & claims moved **into the app**.  
+- **DAO-by-design**: governance powers the network, not a company.
 
 ---
 
 ## 4. Core Features
-- 🧅 **Tor-based Routing** – Native `.onion` circuits provide strong encryption and traffic obfuscation.  
-- 🌍 **DHT Discovery** – Peer-to-peer network structure with no central lookup or authority.  
-- 🧠 **ZK Authentication** – Users prove identity & access rights via **zk-SNARKs**, without revealing data.  
-- 💸 **Reward Mechanism** – Node operators earn **LPRX tokens** based on uptime and verified participation.  
-- 🛡 **Community Governance** – Token holders steer network evolution, policies, and treasury.  
+- 🔐 **On-device ZK Authentication** — The Desktop client generates/verifies ZK proofs locally; access credentials are never uploaded.  
+- 🕸 **HyperNode Mesh** — Peers relay encrypted traffic across a distributed graph, replacing legacy DHT discovery.  
+- 📚 **HyperBee Data** — Public, non-sensitive metrics (e.g., aggregate status, version, last commit) are published to HyperBee for transparency without deanonymization.  
+- 🧅 **Tor-Native Routing** — Traffic can egress via onion-enabled paths with multi-hop obfuscation.  
+- 💎 **Premium TUN Mode** — Kernel-level tunnel (TUN) for full-device routing; toggle available for Premium users.  
+- 🖥️ **Unified Control in App** — Status, claims, rewards, and hosting controls live **inside the Desktop app** (no web dashboard).
 
 ---
 
-## 5. Token Utility
-The **$LPRX Token** is the core of the LastParadox ecosystem. It powers:
-- Payments for VPN access and premium routing.  
-- Rewards for node operators and contributors.  
-- Staking to boost uptime rewards and governance weight.  
-- DAO governance — proposals, upgrades, and network policy voting.  
-- Exclusive access for NFT holders and early supporters.
+## 5. Architecture Overview
+**Client (Desktop App, Tauri)**
+- Local ZK wallet & proofs
+- Proxy manager (SOCKS/HTTP), Premium TUN toggle
+- HyperNode peer connectivity
+- HyperBee read access for public state
+
+**Daemon (Local service)**
+- Tor process orchestration
+- Transport routing & process lifecycle
+- Secure local API for the app
+
+**Public Data Plane**
+- HyperBee(s) for aggregated, non-sensitive network info (e.g., active nodes count, protocol version, release notices)
+
+> **No web dashboard:** claim flows, node status, and user operations are handled locally by the app.
 
 ---
 
-## 6. Tokenomics
-- **Total Supply:** 1,000,000,000 $LPRX (fixed, no future minting)
+## 6. Staged Economic Model (Contributors-first, Token-later)
+Before launching a token, the project prioritizes **sustainable funding and delivery**:
 
-### Distribution
-| Category                | Percentage | Allocation (LPRX) | Vesting / Notes |
-|--------------------------|------------|-------------------|-----------------|
-| Community & Rewards      | 40%        | 400,000,000       | Distributed over 5 years to node operators & stakers |
-| NFT Presale Airdrop      | 2%         | 20,000,000        | 3,000 NFT holders (6,666 LPRX each), 12-month vesting |
-| Team & Advisors          | 15%        | 150,000,000       | 12-month cliff + 36-month vesting |
-| Liquidity Provision      | 15%        | 150,000,000       | Initial LP seeded with 0.1% (1M LPRX), increased gradually |
-| Marketing & Partnerships | 8%         | 80,000,000        | Exchange listings, collabs, campaigns |
-| Reserve / Treasury       | 10%        | 100,000,000       | Managed by DAO governance |
-| Early Contributors       | 10%        | 100,000,000       | Beta testers, uptime pioneers, early supporters |
+**Phase A — Community Contributions**
+- Contributors fund initial development and infra (DePIN-style).  
+- In return, they receive:
+  - **Functional app access** with features unlocked proportionally to their contribution (e.g., Premium/TUN, host options).  
+  - **Governance rights** in the emerging DAO.  
+  - **Eligibility for future rewards** once the economic layer is activated.
 
----
+**Why not a token now?** Launching a token too early introduces:
+- **Regulatory exposure**  
+- **Wrong incentives**  
+- **Low liquidity & volatility**  
+- **Risk of “token-first, product-later” failure**
 
-## 7. NFT Presale
-- **Supply:** 3,000 NFT Presale Passes  
-- **Price:** 0.05 SOL each  
+**Phase B — Tokenization (RWRD)**
+- Once core features are stable and the contributor base is established, the DAO may propose and ratify a token launch.  
+- The token (RWRD) would fuel rewards, governance, and premium activation — subject to DAO approval and jurisdictional review.
 
-### Benefits
-- Guaranteed airdrop of **6,666 LPRX**, vested over 12 months.  
-- Access to **beta dVPN**, private Discord channels, and governance perks.  
-- Future NFT staking & yield multipliers for active hosts.  
-
-### Liquidity Strategy
-- All SOL raised from the presale funds liquidity and security reserves.  
-- **50 SOL** retained as cold storage reserve.  
-- **100 SOL + 1M LPRX** seed the initial **Raydium LP** (0.1% of supply).  
-- LP progressively reinforced by DAO and community contributions.
-
-### Vesting Schedule
-| Unlock Stage | Percentage | Timeframe |
-|---------------|-------------|------------|
-| TGE (mint end) | 25% | Immediate |
-| After 3 months | 25% | — |
-| After 6 months | 25% | — |
-| After 12 months | 25% | Final unlock |
-
-⚖️ **Why Vesting?**  
-To ensure fair distribution, price stability, and long-term engagement while protecting the network from speculative volatility.
+> **No dividends:** Contributions are not investments or securities. No profit share is promised or implied.
 
 ---
 
-## 8. Roadmap
-**Q3 2025** – MVP release (Tor + DHT core), NFT presale & initial liquidity  
-**Q4 2025** – zkAuth integration ([zk.lastparadox.xyz](https://zk.lastparadox.xyz)) & reward system  
-**Q1 2026** – Governance launch (DAO + staking dashboard)  
-**Q2 2026** – Mobile clients, bandwidth marketplace & public node incentives  
+## 7. Token (RWRD) — Draft Utility (subject to DAO vote)
+If/when launched, **RWRD** would power:
+- 💸 **Access & Premium** — payment for premium routes, bandwidth priority, TUN unlocks (if chosen by the DAO).  
+- 🏆 **Rewards** — uptime & reliability incentives for hosts (DePIN-aligned).  
+- 🗳 **Governance** — proposals, upgrades, network parameters.  
+- 🔐 **Staking** — anti-Sybil & quality-of-service weighting (optional, per DAO design).
+
+> Tokenomics, supply, and vesting are **TBD by DAO**; no promise of timelines or allocations is made at this stage.
 
 ---
 
-## 9. Governance
-LastParadox is a **community-governed network**.  
-$LPRX holders vote on:
-- Protocol upgrades and technical direction.  
-- Reward algorithms & staking parameters.  
-- Treasury and liquidity allocations.  
-- Node reputation models and DHT rules.  
-
-Governance evolves as the protocol decentralizes further through DAO smart contracts.
+## 8. Governance
+- Progressive decentralization to a **DAO**.  
+- Contributors and (later) token holders can:
+  - Propose/approve **protocol upgrades** and parameter changes.  
+  - Define **reward formulas** and QoS standards.  
+  - Manage **treasury** (grants, audits, liquidity ops).  
+- Initially off-chain / multisig; transition to **on-chain governance** once safe and audited.
 
 ---
 
-## 10. Security & Compliance
-- **Tor routing & encryption** ensure data anonymity by design.  
-- **ZK authentication** prevents identity exposure while ensuring access legitimacy.  
-- **Open-source transparency** — full code on GitHub.  
-- **Audits** performed before mainnet launch.  
-- **Vested token distribution** prevents manipulation and dumping.  
-- **Gradual liquidity scaling** mitigates volatility risks.  
+## 9. Security & Privacy
+- **Local-first ZK**: keys & proofs stored and generated locally; no centralized auth servers.  
+- **Code signatures** and reproducible builds (where feasible).  
+- **Open-source** components, with third-party audits before enabling critical features.  
+- **Minimal data** in HyperBee (non-sensitive only).  
+- **Kill-switch & clean shutdown** for proxies and TUN to avoid leaks.
 
 ---
 
-## 11. Conclusion
-**LastParadox** is not just another VPN — it’s a **movement for digital freedom**.  
-By merging **Tor privacy**, **DHT decentralization**, and **ZK-proof authentication**, it empowers users to reclaim internet sovereignty.
+## 10. Roadmap (High-Level, Indicative)
+- ✅ **v1.0** — Tor + HyperNode core, local ZK auth, in-app status/claims (no web dashboard)  
+- 🧩 **v1.1** — Stable HyperBee telemetry, host tooling, improved process lifecycle  
+- 💎 **v1.5** — Premium TUN hardening, Windows/macOS parity, graceful/forced shutdown logic  
+- 🗳 **v2.0** — DAO bootstrap, contributor governance; draft RWRD token spec for review  
+- 📱 **v2.x** — Mobile client, extended host marketplace (subject to safety reviews)
 
-The **LPRX token** aligns incentives between users, hosts, and governance — creating a sustainable, privacy-first, community-driven ecosystem for the future of private connectivity.
+> Roadmap is aspirational and subject to change based on testing, audits, and DAO decisions.
 
 ---
 
-## 12. Links
-- 🌐 Website: [https://lastparadox.xyz](https://lastparadox.xyz)  
-- 📄 Tokenomics: [TOKENOMICS.md](./TOKENOMICS.md)  
-- 🔐 ZK Portal: [https://zk.lastparadox.xyz](https://zk.lastparadox.xyz)  
-- 🎨 NFT Presale: [https://mint.lastparadox.xyz](https://mint.lastparadox.xyz)  
-- 💬 [Discord](https://discord.gg/w4xvwUQg)  
-- 🐦 [X (Twitter)](https://x.com/LastParadox__)  
-- 📂 [GitHub](https://github.com/Lastexitfromnowhere)  
+## 11. Legal & Compliance
+- **No token sale at this stage.** No promise of listing, price, or dividends.  
+- **Contributions** support development and may grant **feature access** and **governance rights**, not financial returns.  
+- Users are responsible for **local law compliance** regarding VPNs/Tor.  
+- A separate `LEGAL_DISCLAIMER.md` is recommended for repository distribution.
+
+---
+
+## 12. Conclusion
+**LastParadox** replaces centralized VPN trust with **local ZK proofs**, **HyperNode routing**, and **Tor obfuscation**, all controlled from a **single Desktop application**.  
+By funding development **before** tokenization, the community avoids the pitfalls of premature economics and builds a resilient, DAO-governed network — **privacy-first, user-owned, future-proof**.
+
+---
+
+## 13. Links
+- 🌐 Website (static landing): https://lastparadox.xyz  
+- 🧰 App Releases: (to be added)  
+- 📚 Docs & Whitepaper: (this repo)  
+- 💬 Discord: https://discord.gg/w4xvwUQg  
+- 🐦 X/Twitter: https://x.com/LastParadox__  
+- 📂 GitHub: https://github.com/Lastexitfromnowhere
