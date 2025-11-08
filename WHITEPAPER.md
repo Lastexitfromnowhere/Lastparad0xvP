@@ -149,6 +149,6 @@ By funding development **before** tokenization, the community avoids the pitfall
 - 🌐 Website (static landing): https://lastparadox.xyz  
 - 🧰 App Releases: (to be added)  
 - 📚 Docs & Whitepaper: (this repo)  
-- 💬 Discord: https://discord.gg/w4xvwUQg  
+- 💬 Discord: https://discord.gg/nnZGYNU8Dp  
 - 🐦 X/Twitter: https://x.com/LastParadox__  
 - 📂 GitHub: https://github.com/Lastexitfromnowhere
