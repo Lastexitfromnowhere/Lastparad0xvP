@@ -79,7 +79,7 @@ Our mission is simple:
 <h2 align="center">🤝 Community</h2>
 
 <p align="center">
-<a href="https://discord.gg/w4xvwUQg">Discord</a> •
+<a href="https://discord.gg/nnZGYNU8Dp">Discord</a> •
 <a href="https://x.com/LastParadox__">X (Twitter)</a> •
 <a href="https://github.com/Lastexitfromnowhere">GitHub</a>
 </p>
