@@ -1,58 +1,54 @@
 
-                +------------------------+
-                |   LastParadox Client   |
-                |   (Tauri Frontend)     |
-                +-----------+------------+
-                            |
-                            | ZK Auth (wallet-based, no PII)
-                            v
-                   +--------+--------+
-                   |  LP Daemon      |
-                   |  (Host / Node)  |
-                   +--------+--------+
-                            |
-                            | Encrypted telemetry (opt-in, minimal)
-                            v
-                +-----------+------------+
-                |   Local Metrics Cache  |
-                | (ephemeral, rotating)  |
-                +-----------+------------+
-                            |
-                            | Batched upload over Tor / p2p
-                            v
-        +-------------------+----------------------+
-        |      Data Ingress Layer (Keepers)       |
-        |  - validate daemon signatures           |
-        |  - rate-limit & sanity-check metrics    |
-        +-------------------+----------------------+
-                            |
-                            | append-only writes
-                            v
-               +------------+-----------------+
-               |  Data Vault / Hyper Layer    |
-               |  - Hypercore / Hyperbee      |
-               |  - encrypted, append-only    |
-               |  - anonymised & aggregated   |
-               +------------+-----------------+
-                            |
-                            | scheduled jobs / queries
-                            v
-                +-----------+------------+
-                |  Scoring & Reputation  |
-                |  Engine                |
-                |  - host scores         |
-                |  - network health KPIs |
-                +-----------+------------+
-                            |
-       +--------------------+--------------------------+
-       |                                               |
-       v                                               v
-+------+----------------+                  +----------+----------------+
-|  Routing & Node       |                  | Future Reward Layer       |
-|  Selection            |                  | (non-tradable points now, |
-|  - client chooses     |                  |  LPT airdrop logic later) |
-|  better hosts         |                  +---------------------------+
-+-----------------------+
+        ```
+                       +------------------------+
+                       |   LastParadox Client   |
+                       |     (Tauri App)        |
+                       +-----------+------------+
+                                   |
+                                   | ZK Auth (wallet-based)
+                                   v
+                       +-----------+------------+
+                       |        LP Daemon       |
+                       |     (Host / Node)      |
+                       +-----------+------------+
+                                   |
+                                   | Local metrics (opt-in)
+                                   v
+                       +-----------+------------+
+                       |  Local Metrics Cache   |
+                       +-----------+------------+
+                                   |
+                                   | Encrypted batch upload
+                                   v
+                +------------------+-----------------------+
+                |             Ingress Layer (Keepers)      |
+                |  - verify daemon signatures              |
+                |  - sanity checks / rate limits           |
+                +------------------+-----------------------+
+                                   |
+                                   | append-only storage
+                                   v
+                +------------------+-----------------------+
+                |        Data Vault / Hyper Layer          |
+                |    (Hypercore / Hyperbee encrypted)      |
+                +------------------+-----------------------+
+                                   |
+                                   | scheduled jobs
+                                   v
+                +------------------+-----------------------+
+                |     Scoring & Reputation Engine          |
+                |  - host score                            |
+                |  - network KPIs                          |
+                +------------------+-----------------------+
+                     |                               |
+                     |                               |
+                     v                               v
+        +------------+------------+     +-----------+------------+
+        |  Routing & Node         |     |  Future Reward Layer   |
+        |  Selection (client)     |     |  (non-tradable points  |
+        |  - better hosts chosen  |     |   now, LPT later)      |
+        +-------------------------+     +-------------------------+
+```
 
 
 
