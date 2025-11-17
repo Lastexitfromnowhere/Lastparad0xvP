@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://landing-last.vercel.app/assets/banner2.png" alt="LastParadox Banner" width="100%"/>
+  <img src="https://lastparadox.xyz/assets/banner5.png" alt="LastParadox Banner" width="100%"/>
 </p>
 
 <p align="center"><em>
