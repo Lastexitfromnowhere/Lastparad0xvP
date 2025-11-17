@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://landing-last.vercel.app/assets/banner2.png" alt="LastParadox Banner" width="100%"/>
+  <img src="https://landing-last.vercel.app/assets/banner5.png" alt="LastParadox Banner" width="100%"/>
 </p>
 # 💠 LastParadox Tokenomics (RWRD)
 
