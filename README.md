@@ -90,7 +90,7 @@ Our mission is simple:
 
 <p align="center">
 MIT License © 2025 LastParadox DAO<br/>
-contact@lastparadox.xyz • core.bardage@gmail.com<br/>
-Founder & CEO: <strong>Etheve Stéphane</strong>
+contact@lastparadox.xyz <br/>
+Founder & CEO: <strong>Last_Exit</strong>
 </p>
 
