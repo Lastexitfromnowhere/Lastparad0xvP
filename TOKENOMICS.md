@@ -5,7 +5,7 @@
 # LastParadox Tokenomics — Living Document
 
 **Document Status:** Draft — Subject to Community Review and DAO Governance  
-**Last Updated:** December 2024  
+**Last Updated:** December 2025  
 **Version:** 0.3-draft
 
 ---
