@@ -769,7 +769,7 @@ By prioritizing development **before** tokenization, the project focuses on buil
 
 **Document Type:** Technical Design Draft — Living Whitepaper  
 **Version:** 2.0-draft  
-**Last Updated:** December 2024  
+**Last Updated:** December 2025  
 **Maintainers:** LastParadox Core Team
 
 **License:** All rights reserved — This is a technical design document, not a contractual commitment. Specifications may change without notice.
