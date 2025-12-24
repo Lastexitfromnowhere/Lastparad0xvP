@@ -1,19 +1,42 @@
-# LastParadox
+<p align="center">
+  <img src="https://lastparadox.xyz/assets/banner5.png" alt="LastParadox Banner" width="100%"/>
+</p>
 
-## Technical Design Document — Living Whitepaper
+<h1 align="center">🛡️ LastParadox</h1>
+<h2 align="center">Technical Design Document — Living Whitepaper</h2>
 
-**A Privacy-First, Tor-Based Decentralized VPN with Zero-Knowledge Authentication and Peer-Powered Infrastructure**
+<p align="center">
+  <strong>A Privacy-First, Tor-Based Decentralized VPN with Zero-Knowledge Authentication</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Technical%20Draft-7D4698?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Version-2.0--draft-blue?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-December%202025-green?style=for-the-badge" alt="Updated"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Tor-Integrated-7D4698?style=flat-square&logo=torproject&logoColor=white" alt="Tor"/>
+  <img src="https://img.shields.io/badge/Hypercore-P2P-FF6B6B?style=flat-square" alt="Hypercore"/>
+  <img src="https://img.shields.io/badge/ZK--SNARKs-Groth16-00D4AA?style=flat-square" alt="ZK"/>
+  <img src="https://img.shields.io/badge/Flutter-Desktop-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/>
+  <img src="https://img.shields.io/badge/Node.js-Daemon-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+</p>
 
 ---
 
-> **Document Status:** Technical Draft — Work in Progress  
-> **Architecture:** Flutter Desktop + Node.js Daemon + Hypercore/Hyperbee + Tor  
-> **Key Innovation:** Zero-Knowledge authentication runs locally inside the Desktop app  
-> **Premium Feature:** Full-kernel TUN mode for system-wide traffic routing
+<p align="center">
+  <em>🔐 Zero-Knowledge authentication runs locally inside the Desktop app</em><br/>
+  <em>💎 Premium Feature: Full-kernel TUN mode for system-wide traffic routing</em>
+</p>
 
 ---
 
-## Important Notice
+## ⚠️ Important Notice
+
+<table>
+<tr>
+<td>
 
 > **This document is a technical design draft describing the current architectural intentions of the LastParadox project.**
 >
@@ -24,112 +47,168 @@
 >
 > **Users are responsible for evaluating whether this software meets their security requirements.**
 
+</td>
+</tr>
+</table>
+
 ---
 
-## Methodology
+## 📋 Methodology
 
 This document was collaboratively written by the core development team.
 
-**AI-assisted tools were used for:**
-- Language clarity and consistency
-- Structure refinement and formatting
-- Technical documentation generation
+| AI-Assisted | Team-Originated |
+|-------------|-----------------|
+| Language clarity | Technical decisions |
+| Structure refinement | Architecture choices |
+| Documentation formatting | Implementation details |
 
-**All technical decisions, architecture choices, and implementation details originate from the team's direct work on the codebase.** The described features reflect actual implemented functionality, verified through code review and testing.
+**All technical decisions and implementation details originate from the team's direct work on the codebase.**
 
 ---
 
-## Table of Contents
+## 📖 Table of Contents
+
+<table>
+<tr>
+<td width="50%">
 
 ### Part I: Vision & Mission
-1. [Introduction](#1-introduction)
-2. [Problem Statement](#2-problem-statement)
-3. [The Solution](#3-the-solution-lastparadox)
+- [1. Introduction](#1-introduction)
+- [2. Problem Statement](#2-problem-statement)
+- [3. The Solution](#3-the-solution-lastparadox)
 
 ### Part II: Technical Architecture
-4. [System Architecture](#4-system-architecture)
-5. [Core Components](#5-core-components)
-6. [Security Model](#6-security-model)
-7. [User Flows](#7-user-flows)
+- [4. System Architecture](#4-system-architecture)
+- [5. Core Components](#5-core-components)
+- [6. Security Model](#6-security-model)
+- [7. User Flows](#7-user-flows)
 
 ### Part III: Features & Services
-8. [VPN Features](#8-vpn-features)
-9. [Identity Shield](#9-identity-shield)
-10. [Tier System](#10-tier-system)
+- [8. VPN Features](#8-vpn-features)
+- [9. Identity Shield](#9-identity-shield)
+- [10. Tier System](#10-tier-system)
+
+</td>
+<td width="50%">
 
 ### Part IV: Infrastructure
-11. [Keeper VPS](#11-keeper-vps)
-12. [P2P Data Layer](#12-p2p-data-layer-hypercore)
-13. [Technical Specifications](#13-technical-specifications)
+- [11. Keeper VPS](#11-keeper-vps)
+- [12. P2P Data Layer](#12-p2p-data-layer-hypercore)
+- [13. Technical Specifications](#13-technical-specifications)
 
 ### Part V: Economics & Governance
-14. [Economic Model](#14-economic-model)
-15. [Governance](#15-governance)
-16. [Roadmap](#16-roadmap)
+- [14. Economic Model](#14-economic-model)
+- [15. Governance](#15-governance)
+- [16. Roadmap](#16-roadmap)
 
 ### Part VI: Appendix
-17. [Security Considerations](#17-security-considerations)
-18. [Legal & Compliance](#18-legal--compliance)
-19. [Links & Resources](#19-links--resources)
+- [17. Security Considerations](#17-security-considerations)
+- [18. Legal & Compliance](#18-legal--compliance)
+- [19. Links & Resources](#19-links--resources)
+
+</td>
+</tr>
+</table>
 
 ---
 
-# Part I: Vision & Mission
+<h1 align="center">Part I: Vision & Mission</h1>
+
+---
 
 ## 1. Introduction
 
-The public internet is increasingly centralized, exposing users to surveillance, censorship, and vendor lock-in. Traditional VPN providers require users to trust promises of "no logs" without any verifiability, creating single points of failure and trust.
+The public internet is increasingly centralized, exposing users to surveillance, censorship, and vendor lock-in. Traditional VPN providers require users to trust promises of "no logs" without any verifiability.
 
-**LastParadox** is a **decentralized VPN (dVPN)** that replaces central servers with a **peer-powered mesh** built on **Tor**, **Hypercore/Hyperbee**, and **Zero-Knowledge Proofs**.
+<p align="center">
+  <strong>LastParadox</strong> is a <strong>decentralized VPN (dVPN)</strong> that replaces central servers with a <strong>peer-powered mesh</strong>.
+</p>
 
-Our mission is simple: **give back control of connectivity to the users** — privacy-first, censorship-resistant, and community-governed.
+<p align="center">
+  <img src="https://img.shields.io/badge/🧅-Tor-7D4698?style=for-the-badge" alt="Tor"/>
+  <img src="https://img.shields.io/badge/🔗-Hypercore-FF6B6B?style=for-the-badge" alt="Hypercore"/>
+  <img src="https://img.shields.io/badge/🔐-ZK--SNARKs-00D4AA?style=for-the-badge" alt="ZK"/>
+</p>
 
-### Key Innovations
+<p align="center">
+  <em>Our mission: <strong>Give back control of connectivity to the users</strong> — privacy-first, censorship-resistant, community-governed.</em>
+</p>
+
+### 🔄 Key Innovations
 
 | Feature | Traditional VPN | LastParadox |
 |---------|----------------|-------------|
-| Authentication | Username/Password | ZK-SNARK Proofs (Local) |
-| Trust Model | Centralized Provider | Zero-Trust / Decentralized |
-| Data Storage | Central Database | P2P Hypercore Replication |
-| Traffic Routing | Single-Hop | Multi-Hop (Tor Onion Routing) |
-| DNS Resolution | Provider DNS | Tor DNS (Leak Protected) |
-| Payment | Credit Card / KYC | Cryptocurrency (Solana) |
-| User Interface | Web Dashboard | Local Desktop Application |
-| Verification | Trust Promises | Cryptographic Proofs |
+| **Authentication** | Username/Password | ZK-SNARK Proofs (Local) |
+| **Trust Model** | Centralized Provider | Zero-Trust / Decentralized |
+| **Data Storage** | Central Database | P2P Hypercore Replication |
+| **Traffic Routing** | Single-Hop | Multi-Hop (Tor Onion Routing) |
+| **DNS Resolution** | Provider DNS | Tor DNS (Leak Protected) |
+| **Payment** | Credit Card / KYC | Cryptocurrency (Solana) |
+| **User Interface** | Web Dashboard | Local Desktop Application |
+| **Verification** | Trust Promises | Cryptographic Proofs |
 
 ---
 
 ## 2. Problem Statement
 
-### Centralized VPN Failures
+### ❌ Centralized VPN Failures
 
-- **Single Points of Failure**: Central servers can be seized, compromised, or taken offline
-- **Trust Without Verification**: Users must trust "no logs" claims without proof
-- **Legal Exposure**: Operators face legal pressure to comply with surveillance requests
-- **Data Surface Attack**: Web dashboards and cloud backends create unnecessary data exposure
-- **Vendor Lock-in**: Proprietary protocols prevent interoperability
+<table>
+<tr>
+<td width="50%">
 
-### Privacy Gaps
+**Infrastructure Risks**
+- 🔴 Single Points of Failure
+- 🔴 Servers can be seized or compromised
+- 🔴 Legal pressure for surveillance compliance
+- 🔴 Vendor lock-in with proprietary protocols
 
-- **DNS Leaks**: Many VPNs fail to protect DNS queries
-- **IP Leaks**: Kill switch failures expose real IP addresses
-- **Metadata Collection**: Connection timestamps, bandwidth usage, and session data are logged
-- **Payment Tracking**: Credit card payments link identity to VPN usage
+</td>
+<td width="50%">
+
+**Privacy Gaps**
+- 🔴 DNS Leaks exposing queries
+- 🔴 IP Leaks from kill switch failures
+- 🔴 Metadata Collection (timestamps, bandwidth)
+- 🔴 Payment Tracking linking identity
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 3. The Solution: LastParadox
 
-LastParadox removes centralized trust by fusing multiple privacy technologies:
+### 🛡️ Core Technologies
 
-### Core Technologies
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/🧅-Tor-7D4698?style=for-the-badge" alt="Tor"/><br/>
+<strong>Tor Integration</strong><br/>
+<sub>Onion-routed obfuscation with multi-hop anonymity</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/🔗-Hypercore-FF6B6B?style=for-the-badge" alt="Hypercore"/><br/>
+<strong>P2P Data Layer</strong><br/>
+<sub>Distributed, append-only network coordination</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/🔐-ZK--SNARKs-00D4AA?style=for-the-badge" alt="ZK"/><br/>
+<strong>Zero-Knowledge</strong><br/>
+<sub>Authentication without revealing credentials</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.shields.io/badge/🛡️-Defense-4A90D9?style=for-the-badge" alt="Defense"/><br/>
+<strong>Defense-in-Depth</strong><br/>
+<sub>DNS leak protection, kill switch, DPAPI</sub>
+</td>
+</tr>
+</table>
 
-- 🧅 **Tor Integration**: Onion-routed obfuscation with multi-hop anonymity
-- 🧩 **Hypercore/Hyperbee**: Distributed, append-only data layer for network coordination
-- 🔐 **Zero-Knowledge Proofs**: Authentication without revealing credentials
-- 🛡️ **Defense-in-Depth**: DNS leak protection, kill switch, DPAPI encryption
-
-### Design Principles
+### 📐 Design Principles
 
 | Principle | Implementation |
 |-----------|----------------|
@@ -141,11 +220,13 @@ LastParadox removes centralized trust by fusing multiple privacy technologies:
 
 ---
 
-# Part II: Technical Architecture
+<h1 align="center">Part II: Technical Architecture</h1>
+
+---
 
 ## 4. System Architecture
 
-LastParadox employs a three-tier architecture that separates concerns between user interface, network operations, and decentralized coordination.
+LastParadox employs a three-tier architecture separating user interface, network operations, and decentralized coordination.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -156,7 +237,6 @@ LastParadox employs a three-tier architecture that separates concerns between us
 │  │  │    UI    │  │  State   │  │ Security │  │   ZKP Service        │ │   │
 │  │  │  Pages   │  │ Provider │  │ Services │  │   (Local Proofs)     │ │   │
 │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └──────────┬───────────┘ │   │
-│  │       │              │             │                   │             │   │
 │  │       └──────────────┴─────────────┴───────────────────┘             │   │
 │  │                              │ IPC (HTTP localhost:9124)             │   │
 │  └──────────────────────────────┼───────────────────────────────────────┘   │
@@ -168,7 +248,6 @@ LastParadox employs a three-tier architecture that separates concerns between us
 │  │  │ Process  │  │  Proxy   │  │  Proxy   │  │    Replication       │ │   │
 │  │  │  :9050   │  │  :9081   │  │  :8081   │  │                      │ │   │
 │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └──────────┬───────────┘ │   │
-│  │       │              │             │                   │             │   │
 │  │       └──────────────┴─────────────┴───────────────────┘             │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -193,24 +272,22 @@ LastParadox employs a three-tier architecture that separates concerns between us
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Component Responsibilities
+### 🧩 Component Responsibilities
 
 | Component | Technology | Responsibilities |
 |-----------|------------|------------------|
-| **Flutter Client** | Dart/Flutter | UI, state management, security services, ZKP generation |
-| **Node.js Daemon** | TypeScript/Node.js | Tor management, SOCKS/HTTP proxy, Hyperswarm replication |
-| **Keeper VPS** | Node.js (Hidden Service) | User management, payment processing, tier verification |
-| **Hypercore Network** | Hypercore/Hyperbee | Decentralized data storage and P2P replication |
+| <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/> **Client** | Dart/Flutter | UI, state management, security services, ZKP generation |
+| <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/> **Daemon** | TypeScript | Tor management, SOCKS/HTTP proxy, Hyperswarm replication |
+| <img src="https://img.shields.io/badge/Tor-7D4698?style=flat-square&logo=torproject&logoColor=white"/> **Keeper** | Hidden Service | User management, payment processing, tier verification |
+| <img src="https://img.shields.io/badge/Hypercore-FF6B6B?style=flat-square"/> **P2P** | Hypercore/Hyperbee | Decentralized data storage and replication |
 
 ---
 
 ## 5. Core Components
 
-### 5.1 Identity & Authentication
+### 5.1 🔑 Identity & Authentication
 
 #### ECDSA Keypair Generation
-
-Each user generates a unique ECDSA keypair upon registration:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -224,55 +301,67 @@ Each user generates a unique ECDSA keypair upon registration:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-The public key (`pubkey`) serves as the user's unique identifier across the system for:
-- Whitelist verification
-- Tier lookup
-- Rewards tracking
-- Hypercore feed authentication
-
 #### Zero-Knowledge Proof Authentication
 
-LastParadox employs ZK-SNARKs (Groth16) for authentication without revealing credentials:
+<table>
+<tr>
+<td>
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    ZK Proof Generation                       │
-│                                                              │
-│   privateKey ──► HKDF(privateKey, salt, "zkp-secret") ──► s │
-│                                                              │
-│   s ──► SHA256(s) ──► expectedHash                          │
-│                                                              │
-│   Circuit(s, expectedHash) ──► { proof, publicSignals }     │
-│                                                              │
-│   Verifier(proof, publicSignals, vkey) ──► true/false       │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────┐
+│        ZK Proof Generation          │
+│                                     │
+│  privateKey                         │
+│      │                              │
+│      ▼                              │
+│  HKDF(key, salt, "zkp-secret")      │
+│      │                              │
+│      ▼                              │
+│  SHA256(secret) ──► expectedHash    │
+│      │                              │
+│      ▼                              │
+│  Circuit(secret, hash)              │
+│      │                              │
+│      ▼                              │
+│  { proof, publicSignals }           │
+└────────────────────────────────────┘
 ```
+
+</td>
+<td>
 
 **Security Properties:**
-- **Zero-Knowledge**: Verifier learns nothing about the secret
-- **Soundness**: Valid proof requires knowledge of secret
-- **Non-Interactive**: No back-and-forth communication needed
-- **Replay Resistance**: Proofs bound to session context
 
-#### Solana Wallet Integration
+| Property | Description |
+|----------|-------------|
+| ✅ **Zero-Knowledge** | Verifier learns nothing about the secret |
+| ✅ **Soundness** | Valid proof requires knowledge of secret |
+| ✅ **Non-Interactive** | No back-and-forth needed |
+| ✅ **Replay Resistance** | Proofs bound to session context |
 
-For payment and additional identity verification:
+</td>
+</tr>
+</table>
 
-1. **Challenge Generation**: Client generates random challenge
-2. **Wallet Signature**: User signs with Solana wallet (Phantom/Backpack)
-3. **Proof of Ownership**: Signature proves wallet ownership
+#### 💳 Solana Wallet Integration
 
 Supported wallets: **Backpack** (priority), **Phantom**, **Solflare**
 
-### 5.2 Networking Layer
+```
+1. Challenge Generation ──► Random challenge created
+2. Wallet Signature ──► User signs with Solana wallet
+3. Proof of Ownership ──► Signature proves wallet ownership
+```
+
+### 5.2 🌐 Networking Layer
 
 #### Tor Integration
 
 | Port | Protocol | Purpose |
 |------|----------|---------|
-| 9050 | SOCKS5 | Primary Tor proxy |
-| 9051 | Control | Circuit management |
-| 9053 | DNS | DNS over Tor (leak protection) |
+| `9050` | SOCKS5 | Primary Tor proxy |
+| `9051` | Control | Circuit management |
+| `9053` | DNS | DNS over Tor (leak protection) |
 
 #### Proxy Architecture
 
@@ -280,28 +369,18 @@ Supported wallets: **Backpack** (priority), **Phantom**, **Solflare**
 ┌─────────────────────────────────────────────────────────────┐
 │                     Proxy Chain                              │
 │                                                              │
-│   Application ──► HTTP Proxy ──► SOCKS Proxy ──► Tor ──► Internet │
+│   Application ──► HTTP Proxy ──► SOCKS Proxy ──► Tor ──► 🌍 │
 │                    :8081          :9081         :9050        │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**HTTP Proxy (Port 8081)**
-- Handles HTTP/HTTPS CONNECT requests
-- Compatible with system proxy settings
-
-**SOCKS5 Proxy (Port 9081)**
-- Full SOCKS5 protocol support
-- Chains to Tor SOCKS
-
-#### TUN Interface (Premium)
-
-For kernel-level traffic routing:
+#### 💎 TUN Interface (Premium)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    TUN Routing Mode                          │
 │                                                              │
-│   All Traffic ──► TUN Adapter ──► tun2socks ──► SOCKS ──► Tor │
+│   All Traffic ──► TUN Adapter ──► tun2socks ──► SOCKS ──► Tor│
 │                    10.255.0.1                   :9081        │
 │                                                              │
 │   Route: 0.0.0.0/1 via TUN                                   │
@@ -309,13 +388,24 @@ For kernel-level traffic routing:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 5.3 P2P Data Layer
+### 5.3 📦 P2P Data Layer
 
-#### Hypercore Protocol Suite
-
-- **Hypercore**: Append-only log with cryptographic verification
-- **Hyperbee**: B-tree index for key-value storage
-- **Hyperswarm**: DHT-based peer discovery and replication
+<table>
+<tr>
+<td align="center">
+<strong>Hypercore</strong><br/>
+<sub>Append-only log with cryptographic verification</sub>
+</td>
+<td align="center">
+<strong>Hyperbee</strong><br/>
+<sub>B-tree index for key-value storage</sub>
+</td>
+<td align="center">
+<strong>Hyperswarm</strong><br/>
+<sub>DHT-based peer discovery</sub>
+</td>
+</tr>
+</table>
 
 #### Feed Structure
 
@@ -332,18 +422,18 @@ For kernel-level traffic routing:
 
 ## 6. Security Model
 
-### 6.1 Threat Model
+### 6.1 🎯 Threat Model
 
 | Adversary | Capabilities | Mitigations |
 |-----------|--------------|-------------|
 | **ISP** | Traffic analysis, DNS monitoring | Tor routing, DNS leak protection |
 | **Network MITM** | Packet inspection, injection | TLS, Tor encryption |
-| **Malicious Exit Node** | Traffic interception | HTTPS enforcement, hidden services |
+| **Malicious Exit** | Traffic interception | HTTPS enforcement, hidden services |
 | **Compromised Keeper** | User data access | ZK proofs (no secrets transmitted) |
 | **Local Malware** | Memory/disk access | DPAPI encryption, secure memory |
 | **Sybil Attack** | DHT poisoning | Signature verification, rate limiting |
 
-### 6.2 Defense-in-Depth Layers
+### 6.2 🛡️ Defense-in-Depth Layers
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -359,9 +449,7 @@ For kernel-level traffic routing:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 6.3 Kill Switch
-
-Designed to minimize traffic leaks if VPN connection drops:
+### 6.3 ⚡ Kill Switch
 
 ```
 ALLOW: localhost (127.0.0.1)
@@ -370,158 +458,122 @@ ALLOW: Daemon API (port 9124)
 BLOCK: All other outbound traffic
 ```
 
-Implemented using Windows Firewall rules that:
-- Activate BEFORE VPN connects
-- Persist if application crashes (fail-closed)
+### 6.4 🔒 DNS Leak Protection
 
-### 6.4 DNS Leak Protection
-
-Multi-layer approach to DNS leak mitigation:
-
-1. **System DNS Override**: All interfaces → 127.0.0.1 (Tor DNS)
-2. **Firewall Blocking**: Block port 53 to external addresses
-3. **Tor DNS Resolution**: All queries via DNSPort 9053
+| Layer | Implementation |
+|-------|----------------|
+| **System DNS** | All interfaces → 127.0.0.1 (Tor DNS) |
+| **Firewall** | Block port 53 to external addresses |
+| **Tor DNS** | All queries via DNSPort 9053 |
 
 ---
 
 ## 7. User Flows
 
-### 7.1 Registration Flow
+### 7.1 📝 Registration Flow
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Registration Flow                         │
-│                                                              │
-│   ┌─────────┐     ┌─────────┐     ┌─────────┐     ┌───────┐ │
-│   │ Connect │     │ Payment │     │ Generate│     │ Store │ │
-│   │ Wallet  │ ──► │ (Stripe/│ ──► │ Identity│ ──► │ Local │ │
-│   │         │     │  Solana)│     │ + ZKP   │     │       │ │
-│   └─────────┘     └─────────┘     └─────────┘     └───────┘ │
-│        │               │               │               │     │
-│        ▼               ▼               ▼               ▼     │
-│   solAddress      sessionId      { pubkey,       user-secret │
-│   challenge       plan           privateKey,     .encrypted  │
-│   signature                      zkProof }                   │
-└─────────────────────────────────────────────────────────────┘
+┌─────────┐     ┌─────────┐     ┌─────────┐     ┌───────┐
+│ Connect │     │ Payment │     │ Generate│     │ Store │
+│ Wallet  │ ──► │ (Stripe/│ ──► │ Identity│ ──► │ Local │
+│         │     │  Solana)│     │ + ZKP   │     │       │
+└─────────┘     └─────────┘     └─────────┘     └───────┘
+     │               │               │               │
+     ▼               ▼               ▼               ▼
+solAddress      sessionId      { pubkey,       user-secret
+challenge       plan           privateKey,     .encrypted
+signature                      zkProof }
 ```
 
-### 7.2 VPN Connection Flow
+### 7.2 🔌 VPN Connection Flow
 
 ```
-1. Load user-secret.json (DPAPI decrypt)
-2. Start Daemon (if not running)
-3. Bootstrap Tor (wait for port 9050)
-4. Enable Kill Switch (firewall rules)
-5. Enable DNS Leak Protection
-6. Start SOCKS Proxy (:9081)
-7. Start HTTP Proxy (:8081)
-8. Configure System Proxy (or TUN for Premium)
-9. State: CONNECTED
-```
-
-### 7.3 Data Replication Flow
-
-```
-1. Open local Hyperbee stores
-2. Join Hyperswarm (discovery keys)
-3. Connect to peers (Noise protocol)
-4. Replicate feeds (bidirectional)
-5. Verify signatures on all entries
-6. Cache verified data locally (LevelDB)
-7. Periodic sync (every 10 seconds)
+1. ✅ Load user-secret.json (DPAPI decrypt)
+2. ✅ Start Daemon (if not running)
+3. ✅ Bootstrap Tor (wait for port 9050)
+4. ✅ Enable Kill Switch (firewall rules)
+5. ✅ Enable DNS Leak Protection
+6. ✅ Start SOCKS Proxy (:9081)
+7. ✅ Start HTTP Proxy (:8081)
+8. ✅ Configure System Proxy (or TUN for Premium)
+9. 🟢 State: CONNECTED
 ```
 
 ---
 
-# Part III: Features & Services
+<h1 align="center">Part III: Features & Services</h1>
+
+---
 
 ## 8. VPN Features
 
-### Core Features (All Users)
+### 🆓 Core Features (All Users)
 
-| Feature | Description |
-|---------|-------------|
-| **Tor Routing** | Multi-hop onion routing for anonymity |
-| **HTTP/SOCKS Proxy** | Browser and application proxy support |
-| **DNS Leak Protection** | All DNS queries via Tor |
-| **Kill Switch** | Block traffic if VPN disconnects |
-| **Local ZK Auth** | Zero-knowledge authentication |
-| **Daily Rewards** | Claim tokens for network participation |
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🧅 **Tor Routing** | Multi-hop onion routing for anonymity | ✅ Live |
+| 🌐 **HTTP/SOCKS Proxy** | Browser and application proxy support | ✅ Live |
+| 🔒 **DNS Leak Protection** | All DNS queries via Tor | ✅ Live |
+| ⚡ **Kill Switch** | Block traffic if VPN disconnects | ✅ Live |
+| 🔐 **Local ZK Auth** | Zero-knowledge authentication | ✅ Live |
+| 💰 **Daily Rewards** | Claim tokens for participation | ✅ Live |
 
-### Premium Features
+### 💎 Premium Features
 
-| Feature | Description |
-|---------|-------------|
-| **TUN Routing** | Kernel-level full-device routing |
-| **Priority Routing** | Faster connection establishment |
-| **Host Mode** | Operate as relay node |
-| **Unlimited Bandwidth** | No throttling |
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🚀 **TUN Routing** | Kernel-level full-device routing | 🔄 Beta |
+| ⚡ **Priority Routing** | Faster connection establishment | ✅ Live |
+| 🖥️ **Host Mode** | Operate as relay node | 🔄 Beta |
+| ♾️ **Unlimited Bandwidth** | No throttling | ✅ Live |
 
 ---
 
 ## 9. Identity Shield
 
-### Overview
+### 🔍 Overview
 
 Identity Shield is an integrated data breach monitoring service:
 
-- **Check** emails, phones, usernames against breach databases
-- **Monitor** identifiers continuously for new exposures
-- **Alert** when new breaches are detected
-- **Remediate** with actionable security steps
+<table>
+<tr>
+<td align="center">
+<strong>🔍 Check</strong><br/>
+<sub>Emails, phones, usernames against breach databases</sub>
+</td>
+<td align="center">
+<strong>👁️ Monitor</strong><br/>
+<sub>Continuous monitoring for new exposures</sub>
+</td>
+<td align="center">
+<strong>🔔 Alert</strong><br/>
+<sub>Notifications when breaches detected</sub>
+</td>
+<td align="center">
+<strong>🛠️ Remediate</strong><br/>
+<sub>Actionable security steps</sub>
+</td>
+</tr>
+</table>
 
-### Architecture
+### 📊 Risk Levels
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Identity Shield                           │
-│                                                              │
-│   Flutter Client ──► Node.js Backend ──► Breach APIs        │
-│                           │                                  │
-│                    ┌──────┴──────┐                          │
-│                    │  PostgreSQL │  (Hashed storage)        │
-│                    │    Redis    │  (Caching)               │
-│                    └─────────────┘                          │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Service Interface
-
-```dart
-// One-time breach check
-checkIdentity(identifier, type) → IdentityCheckResult
-
-// Continuous monitoring
-createWatch(identifier, type, consent) → IdentityWatch
-
-// GDPR right to erasure
-deleteWatch(watchId) → void
-```
-
-### Risk Levels
-
-| Level | Score | Description |
-|-------|-------|-------------|
-| Minimal | 0-10 | No known exposures |
-| Low | 11-30 | Minor exposure |
-| Medium | 31-60 | Moderate exposure |
-| High | 61-85 | Significant exposure |
-| Critical | 86-100 | Severe compromise |
-
-### Privacy Considerations
-
-- **Hashed Storage**: Identifiers never stored in plaintext
-- **Consent-Based**: Explicit user consent required
-- **GDPR Compliant**: Full deletion support
+| Level | Score | Color |
+|-------|-------|-------|
+| 🟢 Minimal | 0-10 | No known exposures |
+| 🟡 Low | 11-30 | Minor exposure |
+| 🟠 Medium | 31-60 | Moderate exposure |
+| 🔴 High | 61-85 | Significant exposure |
+| ⚫ Critical | 86-100 | Severe compromise |
 
 ---
 
 ## 10. Tier System
 
-### Tier Comparison
+### 📋 Tier Comparison
 
 | Feature | STANDARD | PREMIUM |
-|---------|----------|---------|
+|---------|:--------:|:-------:|
 | Tor Routing | ✅ | ✅ |
 | HTTP/SOCKS Proxy | ✅ | ✅ |
 | DNS Leak Protection | ✅ | ✅ |
@@ -532,30 +584,26 @@ deleteWatch(watchId) → void
 | Host Mode | ❌ | ✅ |
 | Unlimited Bandwidth | ❌ | ✅ |
 
-### Daily Rewards
+---
 
-```
-Daily Claim: 0.5 tokens
-Cooldown: 24 hours
-Distribution: Solana wallet
-```
+<h1 align="center">Part IV: Infrastructure</h1>
 
 ---
 
-# Part IV: Infrastructure
-
 ## 11. Keeper VPS
 
-### Overview
+### 🖥️ Overview
 
-The Keeper VPS is the central coordination server operating as a Tor hidden service:
+The Keeper VPS is the central coordination server operating as a **Tor hidden service**:
 
-- **User Management**: Registration, approval, whitelist
-- **Payment Processing**: Stripe and Solana verification
-- **Feed Replication**: Master node for Hypercore sync
-- **Tier Management**: Subscription assignment
+| Function | Description |
+|----------|-------------|
+| 👤 **User Management** | Registration, approval, whitelist |
+| 💳 **Payment Processing** | Stripe and Solana verification |
+| 🔄 **Feed Replication** | Master node for Hypercore sync |
+| 🏷️ **Tier Management** | Subscription assignment |
 
-### API Endpoints
+### 🔌 API Endpoints
 
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
@@ -565,18 +613,11 @@ The Keeper VPS is the central coordination server operating as a Tor hidden serv
 | `/api/rewards` | GET | Reward balance |
 | `/api/rewards/claim` | POST | Daily claim |
 
-### Security
-
-- **Private Namespace Keys**: HMAC-SHA256 derived
-- **Ed25519 Signing**: Tier entries cryptographically signed
-- **ZK Verification**: snarkjs proof validation
-- **Tor Hidden Service**: .onion exposure only
-
 ---
 
 ## 12. P2P Data Layer (Hypercore)
 
-### Feed Structure
+### 📦 Feed Structure
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -591,32 +632,24 @@ The Keeper VPS is the central coordination server operating as a Tor hidden serv
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Replication
-
-- **Hyperswarm DHT**: Peer discovery
-- **Noise Protocol**: Encrypted connections
-- **Sparse Replication**: Download only needed data
-- **Signature Verification**: All entries validated
-
 ---
 
 ## 13. Technical Specifications
 
-### Ports and Protocols
+### 🔌 Ports and Protocols
 
 | Port | Protocol | Component | Purpose |
 |------|----------|-----------|---------|
-| 8081 | HTTP | HTTP Proxy | System proxy |
-| 9050 | SOCKS5 | Tor | Primary Tor proxy |
-| 9051 | TCP | Tor Control | Circuit management |
-| 9053 | DNS | Tor DNS | DNS over Tor |
-| 9081 | SOCKS5 | SOCKS Proxy | Application proxy |
-| 9124 | HTTP | Daemon API | Client-daemon IPC |
-| 9126 | HTTP | ZKP Proxy | ZK proof generation |
+| `8081` | HTTP | HTTP Proxy | System proxy |
+| `9050` | SOCKS5 | Tor | Primary Tor proxy |
+| `9051` | TCP | Tor Control | Circuit management |
+| `9053` | DNS | Tor DNS | DNS over Tor |
+| `9081` | SOCKS5 | SOCKS Proxy | Application proxy |
+| `9124` | HTTP | Daemon API | Client-daemon IPC |
+| `9126` | HTTP | ZKP Proxy | ZK proof generation |
 
-### File Storage
+### 📁 File Storage (Windows)
 
-**Windows:**
 ```
 %APPDATA%\lastparadox\vpn\data\
 ├── user-secret.json          # Plaintext (for daemon)
@@ -625,64 +658,54 @@ The Keeper VPS is the central coordination server operating as a Tor hidden serv
 └── hypercore\                # Hyperbee feeds
 ```
 
-### Dependencies
+---
 
-**Flutter Client:**
-- Flutter SDK 3.x
-- Provider, win32, pointycastle, crypto
-
-**Node.js Daemon:**
-- Node.js 20.x
-- Fastify, Hypercore/Hyperbee/Hyperswarm, socks
-
-**ZKP System:**
-- snarkjs 0.7.x (Groth16)
-- circom circuits
+<h1 align="center">Part V: Economics & Governance</h1>
 
 ---
 
-# Part V: Economics & Governance
-
 ## 14. Economic Model
 
-### Phase A: Community Contributions (Current)
+### 📊 Phase A: Community Contributions (Current)
 
-Before launching a token, the project prioritizes **sustainable funding and delivery**:
+<table>
+<tr>
+<td>
 
-**Contributors receive:**
-- Functional app access with features unlocked proportionally
-- Governance rights in the emerging DAO
-- Eligibility for future rewards
+**Contributors Receive:**
+- ✅ Functional app access
+- ✅ Governance rights
+- ✅ Eligibility for future rewards
 
-**Why not a token now?**
-- Regulatory exposure
-- Wrong incentives
-- Low liquidity & volatility
-- Risk of "token-first, product-later" failure
+</td>
+<td>
 
-### Phase B: Tokenization (RWRD) — Future
+**Why No Token Now?**
+- ⚠️ Regulatory exposure
+- ⚠️ Wrong incentives
+- ⚠️ Low liquidity & volatility
+- ⚠️ "Token-first, product-later" failure
 
-Once core features are stable, the DAO may propose token launch:
+</td>
+</tr>
+</table>
 
-| Utility | Description |
-|---------|-------------|
-| **Access** | Payment for premium features |
-| **Rewards** | Uptime incentives for hosts |
-| **Governance** | Proposals and voting |
-| **Staking** | Anti-Sybil weighting |
+### 🔮 Phase B: Tokenization (RWRD) — Future
 
-> Tokenomics TBD by DAO. No promises of timelines or allocations.
+> **Tokenomics TBD by DAO. No promises of timelines or allocations.**
 
 ---
 
 ## 15. Governance
 
-### Progressive Decentralization
+### 🏛️ Progressive Decentralization
 
-- Initial: Off-chain / multisig
-- Future: On-chain governance (audited)
+| Stage | Mechanism |
+|-------|-----------|
+| **Initial** | Off-chain / multisig |
+| **Future** | On-chain governance (audited) |
 
-### DAO Powers
+### ⚡ DAO Powers
 
 - Propose/approve protocol upgrades
 - Define reward formulas
@@ -693,6 +716,13 @@ Once core features are stable, the DAO may propose token launch:
 
 ## 16. Roadmap
 
+```
+v1.0 ████████████████████ 100%  ✅ Done
+v1.1 ████████████░░░░░░░░  60%  🔄 In Progress
+v1.5 ░░░░░░░░░░░░░░░░░░░░   0%  📋 Planned
+v2.0 ░░░░░░░░░░░░░░░░░░░░   0%  📋 Planned
+```
+
 | Version | Status | Features |
 |---------|--------|----------|
 | **v1.0** | ✅ Done | Tor + Hypercore, local ZK auth, in-app claims |
@@ -701,82 +731,115 @@ Once core features are stable, the DAO may propose token launch:
 | **v2.0** | 📋 Planned | DAO bootstrap, RWRD token spec |
 | **v2.x** | 📋 Future | Mobile client, host marketplace |
 
-> Roadmap is aspirational and subject to change.
+> *Roadmap is aspirational and subject to change.*
 
 ---
 
-# Part VI: Appendix
+<h1 align="center">Part VI: Appendix</h1>
+
+---
 
 ## 17. Security Considerations
 
-### ZK Circuit Trusted Setup
+### 🔐 ZK Circuit Trusted Setup
 
 - Powers of Tau ceremony
 - Circuit-specific Phase 2
 - Verification key publication
 - **Recommendation**: External audit before production
 
-### Known Limitations
+### ⚠️ Known Limitations
 
-1. **Tor Exit Node Trust**: HTTPS required for sensitive traffic
-2. **Metadata Leakage**: Connection timing may be observable
-3. **Platform Dependency**: Full features require Windows currently
-
-### Side-Channel Mitigations
-
-- Constant-time comparisons
-- Memory zeroization
-- No secret logging
+| Limitation | Mitigation |
+|------------|------------|
+| Tor Exit Node Trust | HTTPS required for sensitive traffic |
+| Metadata Leakage | Connection timing may be observable |
+| Platform Dependency | Full features require Windows currently |
 
 ---
 
 ## 18. Legal & Compliance
 
-- **No token sale at this stage**
-- **Contributions** support development, not financial returns
-- Users responsible for **local law compliance**
-- No dividends promised or implied
+<table>
+<tr>
+<td>
+
+- ❌ **No token sale** at this stage
+- ❌ **No dividends** promised or implied
+- ✅ **Contributions** support development
+- ✅ Users responsible for **local law compliance**
+
+</td>
+</tr>
+</table>
+
+> See [LEGAL.md](./LEGAL.md) for full terms.
 
 ---
 
 ## 19. Links & Resources
 
-- 🌐 Website: https://lastparadox.xyz
-- 💬 Discord: https://discord.gg/nnZGYNU8Dp
-- 🐦 X/Twitter: https://x.com/LastParadox__
-- 📂 GitHub: https://github.com/Lastexitfromnowhere
-- 📧 Contact: contact@lastparadox.xyz
+<p align="center">
+  <a href="https://lastparadox.xyz">
+    <img src="https://img.shields.io/badge/🌐_Website-lastparadox.xyz-00C853?style=for-the-badge" alt="Website"/>
+  </a>
+  <a href="https://discord.gg/nnZGYNU8Dp">
+    <img src="https://img.shields.io/badge/💬_Discord-Join_Us-5865F2?style=for-the-badge" alt="Discord"/>
+  </a>
+  <a href="https://x.com/LastParadox__">
+    <img src="https://img.shields.io/badge/🐦_X-@LastParadox__-000000?style=for-the-badge" alt="X"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Lastexitfromnowhere">
+    <img src="https://img.shields.io/badge/📂_GitHub-Lastexitfromnowhere-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  </a>
+  <a href="mailto:contact@lastparadox.xyz">
+    <img src="https://img.shields.io/badge/📧_Email-contact@lastparadox.xyz-EA4335?style=for-the-badge" alt="Email"/>
+  </a>
+</p>
 
 ---
 
-## Conclusion
+## 🎯 Conclusion
 
-**LastParadox** aims to reduce centralized VPN trust through:
+<p align="center">
+  <strong>LastParadox</strong> aims to reduce centralized VPN trust through:
+</p>
 
-- **Local ZK Proofs**: Authentication designed to minimize credential exposure
-- **Hypercore Routing**: Decentralized, append-only data layer for transparency
-- **Tor Integration**: Multi-hop routing leveraging the Tor network
-- **Defense-in-Depth**: Multiple security layers (DNS protection, kill switch, encryption)
-- **Single Desktop App**: Local-first design without web dashboard dependencies
+<table>
+<tr>
+<td align="center">🔐<br/><strong>Local ZK Proofs</strong></td>
+<td align="center">🔗<br/><strong>Hypercore Routing</strong></td>
+<td align="center">🧅<br/><strong>Tor Integration</strong></td>
+<td align="center">🛡️<br/><strong>Defense-in-Depth</strong></td>
+<td align="center">🖥️<br/><strong>Local-First Design</strong></td>
+</tr>
+</table>
 
-By prioritizing development **before** tokenization, the project focuses on building functional software first — aiming for a privacy-focused, community-governed network.
-
----
-
----
-
-## Document Information
-
-**Document Type:** Technical Design Draft — Living Whitepaper  
-**Version:** 2.0-draft  
-**Last Updated:** December 2025  
-**Maintainers:** LastParadox Core Team
-
-**License:** All rights reserved — This is a technical design document, not a contractual commitment. Specifications may change without notice.
+<p align="center">
+  <em>By prioritizing development <strong>before</strong> tokenization, the project focuses on building functional software first.</em>
+</p>
 
 ---
 
-## Final Disclaimer
+## 📄 Document Information
+
+| Field | Value |
+|-------|-------|
+| **Type** | Technical Design Draft — Living Whitepaper |
+| **Version** | 2.0-draft |
+| **Updated** | December 2025 |
+| **Maintainers** | LastParadox Core Team |
+
+---
+
+## ⚠️ Final Disclaimer
+
+<table>
+<tr>
+<td>
 
 This whitepaper describes the **intended design** of the LastParadox system. While significant portions are implemented and functional, some features may be:
 
@@ -791,9 +854,25 @@ This whitepaper describes the **intended design** of the LastParadox system. Whi
 
 The software is provided "as is" for privacy-conscious users who understand the inherent limitations of any security tool.
 
-**For the latest implementation status, refer to the GitHub repository.**
+</td>
+</tr>
+</table>
 
 ---
 
-*For technical questions, security reports, or collaboration inquiries: contact@lastparadox.xyz*
+<p align="center">
+  <strong>🛡️ Privacy is not a feature. It's the foundation.</strong>
+</p>
 
+<p align="center">
+  <sub>© 2025 LastParadox Project — All rights reserved</sub><br/>
+  <sub>See <a href="./LEGAL.md">LEGAL.md</a> for full terms</sub>
+</p>
+
+---
+
+<p align="center">
+  <a href="#-lastparadox">
+    <img src="https://img.shields.io/badge/⬆️_Back_to_Top-7D4698?style=flat-square" alt="Back to Top"/>
+  </a>
+</p>
