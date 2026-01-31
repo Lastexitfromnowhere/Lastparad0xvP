@@ -140,12 +140,20 @@ The following describes a **proposed** token model. Implementation requires:
 | Inflation | None (fixed supply) | Subject to DAO Vote |
 | Burn Mechanism | DAO-controlled (optional) | Under Discussion |
 
+### 🛠️ Role of Premium Writers ("The Miners")
+
+In the LastParadox architecture, **Premium Writers** are the actual workers securing the network's reliability.
+
+*   **Who are they?** Users with a Premium subscription who operate a high-availability Daemon.
+*   **What do they do?** They cryptographically sign **Heartbeat Blocks** into the HyperCore swarm.
+*   **Why it matters:** These signed blocks serve as **Proof-of-Uptime**. Future RWRD tokens would be distributed based on the verifiable consistency of these proofs.
+
 ### Proposed Utility (If Token Created)
 
 | Utility | Description | Status |
 |---------|-------------|--------|
 | Premium Access | Payment for TUN mode and advanced features | Proposed |
-| Uptime Rewards | Incentives for HyperNode operators | Proposed |
+| Proof-of-Uptime | Incentives for Premium Writers (HyperNode operators) | Proposed |
 | Governance Voting | Weighted voting in DAO proposals | Proposed |
 | Anti-Sybil Staking | Quality-of-service weighting | Under Discussion |
 | Infrastructure Incentives | Rewards for Tor relay operators | Under Discussion |
@@ -158,7 +166,7 @@ The following allocation is a **working proposal** subject to change.
 
 | Category | Proposed % | Proposed Amount | Notes | Status |
 |----------|-----------|-----------------|-------|--------|
-| Community Rewards | 50% | 500,000,000 | HyperNode uptime, Tor routing, contributions | Proposed |
+| Network Rewards | 50% | 500,000,000 | Proof-of-Uptime (Premium Writers), Tor routing | Proposed |
 | Node Incentives | 15% | 150,000,000 | Bootstrap for relays and HyperBee network | Proposed |
 | Core Team | 8% | 80,000,000 | 12-month cliff + 36-month vesting | Proposed |
 | Early Contributors | 4% | 40,000,000 | Phase 0 supporters, DAO-defined criteria | Proposed |

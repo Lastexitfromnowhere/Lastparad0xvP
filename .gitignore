@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+npm-debug.log
+yarn-error.log
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.json
+!package.json
+!tsconfig.json
+!src-preview/**/package.json
+!src-preview/**/tsconfig.json
+
+# Local Data & DB
+data/
+db/
+storage/
+hypercore/
+.hyperswarm/
+
+# Build Outputs
+dist/
+build/
+out/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Sensitive Resources (Explicit Ignore)
+resources/
+certs/
+wallet/
+circuits/
+
+# OS
+.DS_Store
+Thumbs.db

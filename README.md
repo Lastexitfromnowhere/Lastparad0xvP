@@ -86,6 +86,30 @@ Unlike traditional VPNs that ask you to *trust* their "no-logs" promises, LastPa
 
 ---
 
+
+
+---
+
+## 📂 Source Code Preview (Protocol Reference)
+
+> [!IMPORTANT]
+> **This repository documents the LastParadox protocol and architecture.**
+> It is a **reference implementation** and cannot be used as a production VPN system.
+>
+> The source code provided below is a **non-functional skeleton** intended for security auditing and transparency. Critical implementation details (anti-sybil mechanics, exact ZK circuits, and writer consensus rules) are omitted for security and to prevent malicious cloning.
+
+*   [**lastvpn.ts**](./src-preview/hyper-node/src/hyper/lastvpn.ts) — The interface definitions for our distributed consensus and writer promotion logic.
+    *   *Status: Interfaces Only (Implementation Hidded)*
+*   [**server-hyper.ts**](./src-preview/hyper-node/src/server-hyper.ts) — The API contract for the ZK Auth and Tor routing gateway.
+    *   *Status: Interfaces Only (Implementation Hidden)*
+
+### Why is the code "dead"?
+
+We believe in **Auditability > Replicability**.
+Our goal is to prove **how** we protect your data (Zero-Knowledge, Local-First) without handing over the tools to bypass those very protections. This "Anti-Clone" strategy ensures that while the architecture is transparent, the network remains secure against cheap forks and unauthorized node operators.
+
+---
+
 ## 🏗️ Architecture
 
 ```
@@ -165,7 +189,7 @@ Phase 2 ░░░░░░░░░░░░░░░░░░░░  0%
 <table>
 <tr>
 <td align="center">
-<a href="./WHITEPAPER_FINAL.md">
+<a href="./WHITEPAPER.md">
 <img src="https://img.shields.io/badge/📄-Whitepaper-7D4698?style=for-the-badge" alt="Whitepaper"/>
 </a>
 </td>

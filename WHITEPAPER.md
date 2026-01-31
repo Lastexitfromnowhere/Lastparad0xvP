@@ -418,6 +418,15 @@ Supported wallets: **Backpack** (priority), **Phantom**, **Solflare**
 | `users` | User profiles | Wallets, metadata |
 | `claims` | Claim history | Append-only audit log |
 
+#### ✍️ Writer Access Control
+
+*   **Read-Only Default:** By default, Client Daemons are **Readable Only**. They consume data but cannot write to the core feeds.
+*   **Premium Writer Promotion:**
+    *   **Trigger:** When a user with a **PREMIUM** tier connects.
+    *   **Mechanism:** The Daemon requests writer status via `/api/antigravity/request-writer`. The Keeper validates the tier and executes `addWriter`.
+    *   **Effect:** The Premium Daemon receives a "Writer" capability. It can now append **Heartbeat** blocks to the swarm.
+    *   **Purpose:** These blocks serve as cryptographic **Proof-of-Uptime** for participation rewards. They do **not** grant control over network consensus or other users' data.
+
 ---
 
 ## 6. Security Model
@@ -526,6 +535,13 @@ signature                      zkProof }
 | ⚡ **Priority Routing** | Faster connection establishment | ✅ Live |
 | 🖥️ **Host Mode** | Operate as relay node | 🔄 Beta |
 | ♾️ **Unlimited Bandwidth** | No throttling | ✅ Live |
+
+### 🛡️ 8.1 Compliance & Safety (Minor Protection)
+
+To anticipate regulatory requirements and protect vulnerable users:
+
+*   **DNS-Level Family Shield:** Optional "Family Mode" in the Daemon forces DNS resolution through family-safe resolvers (e.g., Cloudflare 1.1.1.3), blocking adult content and malware at the source without traffic inspection.
+*   **On-Device AI Warning:** Integration of lightweight local models (TFLite) to warn users before accessing known malicious or inappropriate sites. Verification happens entirely on-device to preserve privacy.
 
 ---
 
@@ -730,6 +746,18 @@ v2.0 ░░░░░░░░░░░░░░░░░░░░   0%  📋 Pla
 | **v1.5** | 📋 Planned | Premium TUN hardening, Windows/macOS parity |
 | **v2.0** | 📋 Planned | DAO bootstrap, RWRD token spec |
 | **v2.x** | 📋 Future | Mobile client, host marketplace |
+
+### 🚀 Phase 3: Progressive Decentralization (No VPS)
+
+The ultimate goal is to remove the Keeper Master as a central dependency.
+
+*   **Current State (Hybrid):** Keeper acts as a "Benevolent Dictator" for bootstrap and initial trust.
+*   **Target State (DAO Grid):**
+    *   **Distributed Validation:** Use `redeemCouponLocal` so ANY Premium Writer can validate a new user via the Admin Public Key.
+    *   **Distributed Promotion:** Use `addWriterLocal` for decentralized voting/promotion of new Writers.
+    *   **Result:** The network survives peer-to-peer even if the central Keeper infrastructure is removed.
+
+> **Legal Note:** Writer promotion and coupon validation do not grant any control over traffic, routing, or user activity, and remain strictly limited to swarm metadata and uptime verification.
 
 > *Roadmap is aspirational and subject to change.*
 
