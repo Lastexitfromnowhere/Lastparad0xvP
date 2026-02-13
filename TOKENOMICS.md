@@ -73,42 +73,42 @@ Contributors support the network's development and receive **service access** in
 | Community membership | Profit-sharing agreements |
 | Support for development | Financial instruments |
 
-### Contribution Tiers (V1.2)
+### Contribution Plans (V1.2) — Flexible Duration
 
-#### 🔹 Supporter — $4/year
+#### 📅 1 Month — $7
 - Browser proxy access (Tor-routed)
-- Supports infrastructure & relay costs
-- Community member status
-- Access to public Discord channels
-- Daily reward system access
+- Community membership
+- Discord access (public channels)
+- Daily reward system enabled
+- Automatically renews unless cancelled
 
-#### 🔸 Governance Member — $9/year
+#### 📅 6 Months — $36 (Save $6!)
 - **Full application access** (TUN kernel mode included)
 - Vault password manager with Firefox auto-fill
 - HD Wallets (Ethereum + Solana auto-generated)
 - Daily reward system with 7-day streak
+- P2P network participation
+- Regular updates & new features
+- Expires after 6 months
+
+#### 📅 12 Months — $60 (Save $24!)
+- **All 6-Month features included**
 - Voting rights in governance proposals (1 year)
-- Access to governance Discord channels
-- Priority support
+- Priority Discord support channel
+- Early access to beta features
+- Monthly community updates
+- Best value for long-term users
+- Expires after 12 months
 
-#### 💎 Builder — $50/year
-- All Governance features, forever
-- Early access to beta features (Phase 1)
-- Priority voice in governance discussions
-- Permanent builder recognition on website
-- Dedicated Discord support channel
-- Quarterly builder community calls
-- Eligibility for DAO program allocation (not guaranteed)
-
-#### 👑 Founder — $999 (Lifetime)
+#### ♾️ Lifetime — Custom Pricing
 - **All features forever** (no renewal needed)
 - Lifetime access to all current & future features
-- DAO seat proposal right (propose 1 governance vote/year)
-- Founding member status on website
-- VIP Discord channel
+- DAO seat proposal right (propose 1 vote/year)
+- VIP Discord channel with direct dev access
 - Monthly 1-on-1 calls with core team
-- First right of refusal on advisory roles
-- Custom payment plans available (contact support)
+- Founding member status on website
+- Lifetime builder recognition
+- Custom payment plans: Contact `contact@lastparadox.xyz`
 
 ### What Contributors Receive Today
 

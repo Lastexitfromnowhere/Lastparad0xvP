@@ -205,30 +205,44 @@ Phase 2 ░░░░░░░░░░░░░░░░░░░░  0%
 > ⚠️ **Important:** Contributions are **service payments**, not investments.
 > No tokens exist yet. See [LEGAL.md](./LEGAL.md) & [TOKENOMICS.md](./TOKENOMICS.md) for full terms.
 
-### Tier Structure
+### Contribution Plans (Flexible Duration)
 
-| Tier | Duration | Price | What You Get |
-|------|----------|-------|--------------|
-| 🔹 **Supporter** | 1 Year | $4 | Browser proxy + community membership |
-| 🔸 **Governance** | 1 Year | $9 | Full app access + voting rights (1 year) |
-| 💎 **Builder** | 1 Year | $50 | Early beta features + priority voice + recognition |
-| 👑 **Founder** | Lifetime | $999 | All features forever + DAO seat proposal |
+| Duration | Price | Features Unlocked |
+|----------|-------|-------------------|
+| 📅 **1 Month** | $7 | Browser proxy + community access |
+| 📅 **6 Months** | $36 | Full app (TUN, Vault) + HD Wallets + Daily Rewards |
+| 📅 **12 Months** | $60 | Everything above + voting rights + priority support |
+| ♾️ **Lifetime** | Custom | All features forever + DAO governance rights |
 
-### What's Included (All Tiers)
+### What's Included by Plan
 
-**Immediately:**
-- ✅ Working VPN app (Tor-routed)
-- ✅ TUN kernel mode (Premium tiers)
+**1 Month ($7):**
+- ✅ Browser proxy (Tor-routed)
+- ✅ Community membership
+- ✅ Daily rewards system
+- ✅ Discord access
+
+**6 Months ($36) — Full Access:**
+- ✅ Full VPN app (TUN kernel mode)
 - ✅ Vault password manager
 - ✅ HD Wallets (Ethereum + Solana)
 - ✅ Daily rewards & streak system
 - ✅ P2P network participation
+- ✅ All updates & new features
 
-**Future (Phase 1+, DAO approval required):**
-- 🔮 Token allocation (if community votes yes)
-- 🔮 DAO governance participation
-- 🔮 Treasury share voting
-- 🔮 Protocol upgrade proposals
+**12 Months ($60) — With Governance:**
+- ✅ All 6-Month features
+- ✅ Voting rights (1 year)
+- ✅ Priority support
+- ✅ Early beta access
+- ✅ Community recognition
+
+**Lifetime (Custom) — Forever:**
+- ✅ All features forever (no renewal)
+- ✅ DAO seat proposal right
+- ✅ VIP Discord + dev access
+- ✅ Founding member status
+- ✅ Monthly 1-on-1 calls
 
 ### Payment Methods
 - 💳 **Stripe**: Credit card, Apple Pay, Google Pay
