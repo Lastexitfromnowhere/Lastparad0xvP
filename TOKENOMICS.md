@@ -4,9 +4,9 @@
 
 # LastParadox Tokenomics — Living Document
 
-**Document Status:** Draft — Subject to Community Review and DAO Governance  
-**Last Updated:** December 2025  
-**Version:** 0.3-draft
+**Document Status:** V1.2 Release — Subject to Community Review and DAO Governance
+**Last Updated:** February 13, 2026
+**Version:** 1.2-production
 
 ---
 
@@ -73,26 +73,42 @@ Contributors support the network's development and receive **service access** in
 | Community membership | Profit-sharing agreements |
 | Support for development | Financial instruments |
 
-### Contribution Tiers
+### Contribution Tiers (V1.2)
 
 #### 🔹 Supporter — $4/year
-- Basic browser proxy access
-- Supports infrastructure costs
+- Browser proxy access (Tor-routed)
+- Supports infrastructure & relay costs
 - Community member status
 - Access to public Discord channels
+- Daily reward system access
 
-#### 🔹 Governance Member — $9/year
-- Full application access
+#### 🔸 Governance Member — $9/year
+- **Full application access** (TUN kernel mode included)
+- Vault password manager with Firefox auto-fill
+- HD Wallets (Ethereum + Solana auto-generated)
+- Daily reward system with 7-day streak
 - Voting rights in governance proposals (1 year)
 - Access to governance Discord channels
-- Eligibility consideration for future reward programs (not guaranteed)
+- Priority support
 
-#### 🔹 Builder — from $50
-- Supports long-term R&D (Hypercore, Tor, TUN, ZK)
-- Early access to beta features
+#### 💎 Builder — $50/year
+- All Governance features, forever
+- Early access to beta features (Phase 1)
 - Priority voice in governance discussions
-- Recognition as early builder
-- Eligibility consideration for future DAO programs (not guaranteed)
+- Permanent builder recognition on website
+- Dedicated Discord support channel
+- Quarterly builder community calls
+- Eligibility for DAO program allocation (not guaranteed)
+
+#### 👑 Founder — $999 (Lifetime)
+- **All features forever** (no renewal needed)
+- Lifetime access to all current & future features
+- DAO seat proposal right (propose 1 governance vote/year)
+- Founding member status on website
+- VIP Discord channel
+- Monthly 1-on-1 calls with core team
+- First right of refusal on advisory roles
+- Custom payment plans available (contact support)
 
 ### What Contributors Receive Today
 
@@ -140,22 +156,22 @@ The following describes a **proposed** token model. Implementation requires:
 | Inflation | None (fixed supply) | Subject to DAO Vote |
 | Burn Mechanism | DAO-controlled (optional) | Under Discussion |
 
-### 🛠️ Role of Premium Writers ("The Miners")
+### 🛠️ Role of Active Users ("Killstreak Rewards")
 
-In the LastParadox architecture, **Premium Writers** are the actual workers securing the network's reliability.
+In the V2 architecture, daily engagement is rewarded via a **Killstreak** system.
 
-*   **Who are they?** Users with a Premium subscription who operate a high-availability Daemon.
-*   **What do they do?** They cryptographically sign **Heartbeat Blocks** into the HyperCore swarm.
-*   **Why it matters:** These signed blocks serve as **Proof-of-Uptime**. Future RWRD tokens would be distributed based on the verifiable consistency of these proofs.
+*   **Who earns?** Any activated user who meets the uptime requirement (60 minutes/day).
+*   **How it works:** Users claim daily rewards via the in-app claim button. Consecutive daily claims build a streak (1–7+ days) with progressively increasing rewards.
+*   **Why it matters:** Active participation strengthens the network. Future RWRD tokens would be distributed based on cumulative claim history.
 
 ### Proposed Utility (If Token Created)
 
 | Utility | Description | Status |
 |---------|-------------|--------|
 | Premium Access | Payment for TUN mode and advanced features | Proposed |
-| Proof-of-Uptime | Incentives for Premium Writers (HyperNode operators) | Proposed |
+| Proof-of-Uptime | Incentives for daily active users (Killstreak) | Proposed |
 | Governance Voting | Weighted voting in DAO proposals | Proposed |
-| Anti-Sybil Staking | Quality-of-service weighting | Under Discussion |
+| Anti-Sybil Staking | Ticket-based verification | Under Discussion |
 | Infrastructure Incentives | Rewards for Tor relay operators | Under Discussion |
 
 ---
@@ -166,8 +182,8 @@ The following allocation is a **working proposal** subject to change.
 
 | Category | Proposed % | Proposed Amount | Notes | Status |
 |----------|-----------|-----------------|-------|--------|
-| Network Rewards | 50% | 500,000,000 | Proof-of-Uptime (Premium Writers), Tor routing | Proposed |
-| Node Incentives | 15% | 150,000,000 | Bootstrap for relays and HyperBee network | Proposed |
+| Network Rewards | 50% | 500,000,000 | Daily killstreak rewards, activity-based | Proposed |
+| Node Incentives | 15% | 150,000,000 | Bootstrap for HyperNode relay operators | Proposed |
 | Core Team | 8% | 80,000,000 | 12-month cliff + 36-month vesting | Proposed |
 | Early Contributors | 4% | 40,000,000 | Phase 0 supporters, DAO-defined criteria | Proposed |
 | Liquidity Provision | 5% | 50,000,000 | DEX liquidity (DAO vote required) | Under Review |
@@ -272,7 +288,7 @@ The DAO will have authority over:
 
 ### Technical Security
 
-- ZK identity for anti-Sybil protection
+- Ed25519 signed tickets for anti-Sybil protection
 - HyperBee for decentralized data (no central DB)
 - Tor for anonymized routing
 - Open-source code for auditability
@@ -295,7 +311,7 @@ The DAO will have authority over:
 - [x] Core VPN functionality
 - [x] Tor integration
 - [x] Hypercore replication
-- [x] ZK authentication
+- [x] ZK authentication → replaced by Ed25519 signed tickets (V2)
 - [ ] TUN mode stabilization
 - [ ] Multi-platform parity (Windows/macOS/Linux)
 - [ ] Security audit completion
@@ -350,7 +366,7 @@ Contributions are for services rendered. Refund policies follow standard softwar
 |---------|------|---------|
 | 0.1 | Nov 2024 | Initial draft |
 | 0.2 | Dec 2024 | Added disclaimers, clarified tiers |
-| 0.3-draft | Dec 2024 | Renamed "Investor" to "Builder", enhanced legal language, added FAQ |
+| 0.4-draft | Feb 2026 | Replaced Premium Writers with Killstreak, ZK→Ed25519, V2 updates |
 
 ---
 

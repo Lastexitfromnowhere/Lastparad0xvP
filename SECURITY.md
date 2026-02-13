@@ -89,9 +89,9 @@ Your recommendations
 
 | Component | Repository |
 |-----------|------------|
-| ✅ Desktop Client | `lp-flutter` |
-| ✅ Daemon | `lp-daemon` |
-| ✅ ZK Circuits | `lp-circuits` |
+| ✅ Desktop Client | `paralax-flutter` |
+| ✅ Daemon | `Paralax-daemon` |
+| ✅ Landing Site | `LandingLast` |
 | ✅ Keeper API | `lp-keeper` |
 | ✅ Identity Shield | `identity-shield` |
 | ✅ Website | `lastparadox.xyz` |
@@ -135,12 +135,25 @@ LastParadox implements multiple security layers:
 
 | Layer | Implementation |
 |-------|----------------|
-| **Authentication** | ZK-SNARKs (Groth16) — Zero-knowledge proofs |
+| **Authentication** | Ed25519 Signed Tickets — Verified offline |
 | **Traffic** | Tor SOCKS5 — Onion routing |
 | **Storage** | DPAPI (Windows) — Encrypted at rest |
 | **Network** | Kill Switch — Fail-closed on disconnect |
-| **DNS** | Tor DNS — Leak protection |
-| **P2P** | Hyperswarm — Noise protocol encryption |
+
+---
+
+## 🚫 No-Logs Certification
+
+LastParadox uses a **local-only architecture** — tier verification and rewards are handled entirely on the user's device via Ed25519 signed tickets.
+
+**We certify that our infrastructure:**
+
+1.  **Does NOT log IP addresses:** All connections are routed via Tor Hidden Services (.onion), making meaningful IP logging technically impossible.
+2.  **Does NOT store traffic metadata:** We cannot see destination traffic, bandwidth usage, or browsing habits.
+3.  **Does NOT persist session data:** Authentication is via locally-verified Ed25519 signed tickets — no server involved.
+4.  **Does NOT manage tiers centrally:** Tier is determined by a cryptographically signed ticket stored on the user's device.
+
+> **Verification:** This architecture is designed so that even if served a warrant, we physically **cannot** produce user data, as we do not possess it.
 
 ---
 

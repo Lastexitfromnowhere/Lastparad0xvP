@@ -48,7 +48,7 @@ Lastparad0xvP/
 | `lp-flutter` | Flutter Desktop Client (Dart) | 🔒 Private |
 | `lp-daemon` | Node.js Daemon (TypeScript) | 🔒 Private |
 | `lp-keeper` | Keeper VPS Backend | 🔒 Private |
-| `lp-circuits` | ZK-SNARK Circuits (Circom) | 🔒 Private |
+| `LandingLast` | Landing Site + Ticket Generation | 🔒 Private |
 | `identity-shield` | Breach Monitoring Service | 🔒 Private |
 
 ---
@@ -76,8 +76,8 @@ Even though the code is private, here's what powers LastParadox:
 <sub>P2P Data Layer</sub>
 </td>
 <td align="center" width="20%">
-<img src="https://img.shields.io/badge/ZK--SNARKs-00D4AA?style=for-the-badge" alt="ZK"/><br/>
-<sub>Authentication</sub>
+<img src="https://img.shields.io/badge/Ed25519-00D4AA?style=for-the-badge" alt="Ed25519"/><br/>
+<sub>Signed Ticket Auth</sub>
 </td>
 </tr>
 </table>
@@ -90,7 +90,7 @@ Even though the code is private, here's what powers LastParadox:
 | **Backend** | Node.js 20.x + Fastify | Local daemon, API server |
 | **Networking** | Tor (SOCKS5) | Traffic anonymization |
 | **P2P** | Hypercore/Hyperbee/Hyperswarm | Decentralized data sync |
-| **Crypto** | snarkjs (Groth16) | Zero-knowledge proofs |
+| **Crypto** | Ed25519 (tweetnacl) | Signed ticket verification |
 | **Storage** | LevelDB, DPAPI (Windows) | Local encrypted storage |
 | **Payments** | Solana, Stripe | Cryptocurrency & fiat |
 
@@ -102,7 +102,7 @@ We plan to open-source the code progressively:
 
 | Phase | Timeline | What Will Be Released |
 |-------|----------|----------------------|
-| **Phase 1** | After Security Audit | ZK Circuits (Circom) |
+| **Phase 1** | After Security Audit | Daemon SDK & Ticket Spec |
 | **Phase 2** | Q2 2026 | Client SDK & APIs |
 | **Phase 3** | Q3 2026 | Full Client Source |
 | **Phase 4** | TBD (DAO Vote) | Complete Codebase |
@@ -168,7 +168,7 @@ For business inquiries and partnership discussions:
 | Metric | Value |
 |--------|-------|
 | **Total Lines of Code** | ~25,000+ |
-| **Languages** | Dart, TypeScript, Circom |
+| **Languages** | Dart, TypeScript |
 | **Commits** | 500+ |
 | **Active Development** | Since 2024 |
 

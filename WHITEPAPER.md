@@ -6,27 +6,26 @@
 <h2 align="center">Technical Design Document — Living Whitepaper</h2>
 
 <p align="center">
-  <strong>A Privacy-First, Tor-Based Decentralized VPN with Zero-Knowledge Authentication</strong>
+  <strong>A Privacy-First, Tor-Based Decentralized VPN with Ed25519 Signed Ticket Authentication</strong>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Technical%20Draft-7D4698?style=for-the-badge" alt="Status"/>
-  <img src="https://img.shields.io/badge/Version-2.0--draft-blue?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-December%202025-green?style=for-the-badge" alt="Updated"/>
+  <img src="https://img.shields.io/badge/Version-3.0--draft-blue?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-February%202026-green?style=for-the-badge" alt="Updated"/>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Tor-Integrated-7D4698?style=flat-square&logo=torproject&logoColor=white" alt="Tor"/>
   <img src="https://img.shields.io/badge/Hypercore-P2P-FF6B6B?style=flat-square" alt="Hypercore"/>
-  <img src="https://img.shields.io/badge/ZK--SNARKs-Groth16-00D4AA?style=flat-square" alt="ZK"/>
+  <img src="https://img.shields.io/badge/Ed25519-Signed%20Tickets-00D4AA?style=flat-square" alt="Ed25519"/>
   <img src="https://img.shields.io/badge/Flutter-Desktop-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/>
   <img src="https://img.shields.io/badge/Node.js-Daemon-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js"/>
 </p>
 
 ---
 
-<p align="center">
-  <em>🔐 Zero-Knowledge authentication runs locally inside the Desktop app</em><br/>
+  <em>🔐 Ed25519 signed ticket authentication runs locally — no server needed</em><br/>
   <em>💎 Premium Feature: Full-kernel TUN mode for system-wide traffic routing</em>
 </p>
 
@@ -87,7 +86,8 @@ This document was collaboratively written by the core development team.
 ### Part III: Features & Services
 - [8. VPN Features](#8-vpn-features)
 - [9. Identity Shield](#9-identity-shield)
-- [10. Tier System](#10-tier-system)
+- [10. Vault (Password Manager)](#10-vault-password-manager)
+- [11. Tier System](#11-tier-system)
 
 </td>
 <td width="50%">
@@ -139,14 +139,14 @@ The public internet is increasingly centralized, exposing users to surveillance,
 
 | Feature | Traditional VPN | LastParadox |
 |---------|----------------|-------------|
-| **Authentication** | Username/Password | ZK-SNARK Proofs (Local) |
+| **Authentication** | Username/Password | Ed25519 Signed Tickets (Local) |
 | **Trust Model** | Centralized Provider | Zero-Trust / Decentralized |
 | **Data Storage** | Central Database | P2P Hypercore Replication |
 | **Traffic Routing** | Single-Hop | Multi-Hop (Tor Onion Routing) |
 | **DNS Resolution** | Provider DNS | Tor DNS (Leak Protected) |
 | **Payment** | Credit Card / KYC | Cryptocurrency (Solana) |
 | **User Interface** | Web Dashboard | Local Desktop Application |
-| **Verification** | Trust Promises | Cryptographic Proofs |
+| **Verification** | Trust Promises | Ed25519 Cryptographic Signatures |
 
 ---
 
@@ -196,9 +196,9 @@ The public internet is increasingly centralized, exposing users to surveillance,
 <sub>Distributed, append-only network coordination</sub>
 </td>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/🔐-ZK--SNARKs-00D4AA?style=for-the-badge" alt="ZK"/><br/>
-<strong>Zero-Knowledge</strong><br/>
-<sub>Authentication without revealing credentials</sub>
+<img src="https://img.shields.io/badge/🔐-Ed25519-00D4AA?style=for-the-badge" alt="Ed25519"/><br/>
+<strong>Signed Tickets</strong><br/>
+<sub>Authentication via locally-verified signed tickets</sub>
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/🛡️-Defense-4A90D9?style=for-the-badge" alt="Defense"/><br/>
@@ -234,8 +234,8 @@ LastParadox employs a three-tier architecture separating user interface, network
 │  ┌─────────────────────────────────────────────────────────────────────┐   │
 │  │                    Flutter Desktop Client                            │   │
 │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────────────┐ │   │
-│  │  │    UI    │  │  State   │  │ Security │  │   ZKP Service        │ │   │
-│  │  │  Pages   │  │ Provider │  │ Services │  │   (Local Proofs)     │ │   │
+│  │  │    UI    │  │  State   │  │ Security │  │   Ticket Verify      │ │   │
+│  │  │  Pages   │  │ Provider │  │ Services │  │   (Ed25519 Local)    │ │   │
 │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └──────────┬───────────┘ │   │
 │  │       └──────────────┴─────────────┴───────────────────┘             │   │
 │  │                              │ IPC (HTTP localhost:9124)             │   │
@@ -257,7 +257,7 @@ LastParadox employs a three-tier architecture separating user interface, network
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           KEEPER VPS (.onion)                               │
 │  ┌──────────────────────────────────────────────────────────────────────┐  │
-│  │  User Registration │ Tier Verification │ Rewards │ Payment Processing │  │
+│  │  User Registration │ Whitelist Sync │ Payment Processing           │  │
 │  └──────────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     │
@@ -301,7 +301,7 @@ LastParadox employs a three-tier architecture separating user interface, network
 └─────────────────────────────────────────────────────────────┘
 ```
 
-#### Zero-Knowledge Proof Authentication
+#### Ed25519 Signed Ticket Authentication
 
 <table>
 <tr>
@@ -309,21 +309,24 @@ LastParadox employs a three-tier architecture separating user interface, network
 
 ```
 ┌────────────────────────────────────┐
-│        ZK Proof Generation          │
+│    Ed25519 Ticket System            │
 │                                     │
-│  privateKey                         │
+│  LandingLast Site                   │
 │      │                              │
 │      ▼                              │
-│  HKDF(key, salt, "zkp-secret")      │
+│  User purchases plan (Stripe)       │
 │      │                              │
 │      ▼                              │
-│  SHA256(secret) ──► expectedHash    │
+│  Site signs ticket with             │
+│  ADMIN_TIER_PRIVKEY (Ed25519)       │
 │      │                              │
 │      ▼                              │
-│  Circuit(secret, hash)              │
+│  ticket.json sent to app via        │
+│  deep link                          │
 │      │                              │
 │      ▼                              │
-│  { proof, publicSignals }           │
+│  App verifies Ed25519 sig OFFLINE   │
+│  against ADMIN_TIER_PUBKEY          │
 └────────────────────────────────────┘
 ```
 
@@ -334,10 +337,10 @@ LastParadox employs a three-tier architecture separating user interface, network
 
 | Property | Description |
 |----------|-------------|
-| ✅ **Zero-Knowledge** | Verifier learns nothing about the secret |
-| ✅ **Soundness** | Valid proof requires knowledge of secret |
-| ✅ **Non-Interactive** | No back-and-forth needed |
-| ✅ **Replay Resistance** | Proofs bound to session context |
+| ✅ **No Server Needed** | Ticket verified locally against hardcoded pubkey |
+| ✅ **Tamper-Proof** | Ed25519 signature cannot be forged |
+| ✅ **Offline Capable** | Zero network calls for tier verification |
+| ✅ **Replay-Resistant** | Tickets contain expiry timestamps |
 
 </td>
 </tr>
@@ -413,19 +416,14 @@ Supported wallets: **Backpack** (priority), **Phantom**, **Solflare**
 |------|---------|-----------|
 | `hosts` | Available relay nodes | Host info, bandwidth, score |
 | `whitelist` | Approved users | Pubkey, role, flags |
-| `tiers` | Subscription levels | Tier, features, expiry |
-| `rewards` | User rewards | Balance, claims, history |
-| `users` | User profiles | Wallets, metadata |
+| `rewards` | Daily claims (V2) | Streak, uptime, claimed amount |
 | `claims` | Claim history | Append-only audit log |
 
-#### ✍️ Writer Access Control
+#### ✍️ Data Access
 
-*   **Read-Only Default:** By default, Client Daemons are **Readable Only**. They consume data but cannot write to the core feeds.
-*   **Premium Writer Promotion:**
-    *   **Trigger:** When a user with a **PREMIUM** tier connects.
-    *   **Mechanism:** The Daemon requests writer status via `/api/antigravity/request-writer`. The Keeper validates the tier and executes `addWriter`.
-    *   **Effect:** The Premium Daemon receives a "Writer" capability. It can now append **Heartbeat** blocks to the swarm.
-    *   **Purpose:** These blocks serve as cryptographic **Proof-of-Uptime** for participation rewards. They do **not** grant control over network consensus or other users' data.
+*   **Read-Only Default:** Client Daemons replicate data from the Keeper via Hyperswarm.
+*   **Local Feed Writes:** Rewards claims are written to the daemon's local Hypercore feed. No network broadcasts needed.
+*   **Tier:** Determined locally from Ed25519 signed ticket — no network call required.
 
 ---
 
@@ -438,7 +436,7 @@ Supported wallets: **Backpack** (priority), **Phantom**, **Solflare**
 | **ISP** | Traffic analysis, DNS monitoring | Tor routing, DNS leak protection |
 | **Network MITM** | Packet inspection, injection | TLS, Tor encryption |
 | **Malicious Exit** | Traffic interception | HTTPS enforcement, hidden services |
-| **Compromised Keeper** | User data access | ZK proofs (no secrets transmitted) |
+| **Compromised Keeper** | User data access | Local-only tier + rewards (no secrets on server) |
 | **Local Malware** | Memory/disk access | DPAPI encryption, secure memory |
 | **Sybil Attack** | DHT poisoning | Signature verification, rate limiting |
 
@@ -524,8 +522,8 @@ signature                      zkProof }
 | 🌐 **HTTP/SOCKS Proxy** | Browser and application proxy support | ✅ Live |
 | 🔒 **DNS Leak Protection** | All DNS queries via Tor | ✅ Live |
 | ⚡ **Kill Switch** | Block traffic if VPN disconnects | ✅ Live |
-| 🔐 **Local ZK Auth** | Zero-knowledge authentication | ✅ Live |
-| 💰 **Daily Rewards** | Claim tokens for participation | ✅ Live |
+| 🔐 **Local Auth** | Ed25519 signed ticket authentication | ✅ Live |
+| 💰 **Daily Rewards** | Killstreak-based progressive rewards | ✅ Live |
 
 ### 💎 Premium Features
 
@@ -549,42 +547,50 @@ To anticipate regulatory requirements and protect vulnerable users:
 
 ### 🔍 Overview
 
-Identity Shield is an integrated data breach monitoring service:
+Identity Shield is a proactive data breach monitoring service integrated directly into the LastParadox privacy suite. It allows users to monitor their digital footprint for compromises without exposing their identity.
 
-<table>
-<tr>
-<td align="center">
-<strong>🔍 Check</strong><br/>
-<sub>Emails, phones, usernames against breach databases</sub>
-</td>
-<td align="center">
-<strong>👁️ Monitor</strong><br/>
-<sub>Continuous monitoring for new exposures</sub>
-</td>
-<td align="center">
-<strong>🔔 Alert</strong><br/>
-<sub>Notifications when breaches detected</sub>
-</td>
-<td align="center">
-<strong>🛠️ Remediate</strong><br/>
-<sub>Actionable security steps</sub>
-</td>
-</tr>
-</table>
+#### Key Features:
+*   **Breach Detection:** Scans billions of leaked records for email addresses, usernames, and phone numbers.
+*   **Continuous Monitoring:** Automatically alerts users if their compromised data appears in new breaches.
+*   **Privacy-Preserving Lookup:** Queries are hashed or anonymized to prevent the monitoring service from knowing who is being checked.
+*   **Actionable Insights:** Provides specific steps to secure compromised accounts (e.g., "Change Password", "Enable 2FA").
 
-### 📊 Risk Levels
+### 📊 Risk Scoring
 
-| Level | Score | Color |
-|-------|-------|-------|
-| 🟢 Minimal | 0-10 | No known exposures |
-| 🟡 Low | 11-30 | Minor exposure |
-| 🟠 Medium | 31-60 | Moderate exposure |
-| 🔴 High | 61-85 | Significant exposure |
-| ⚫ Critical | 86-100 | Severe compromise |
+The system assigns a risk score to the user's digital identity based on the severity and recency of breaches:
+
+| Level | Score | Status | Action Required |
+|-------|-------|--------|-----------------|
+| 🟢 **Minimal** | 0-10 | Safe | Routine checks |
+| 🟡 **Low** | 11-30 | Minor | Update old passwords |
+| 🟠 **Medium** | 31-60 | Exposed | Change specific passwords |
+| 🔴 **High** | 61-85 | Compromised | Immediate action needed |
+| ⚫ **Critical** | 86-100 | Severe | Identity theft risk |
 
 ---
 
-## 10. Tier System
+## 10. Vault (Password Manager)
+
+### 🔐 Local-First Credential Management
+
+LastParadox Vault is a secure, offline password manager and autofill engine designed to eliminate the reliance on cloud-based password managers which are frequent targets of attacks.
+
+### 🛡️ Core Technologies
+
+*   **Local Encryption:** All credentials are encrypted locally using **AES-256-GCM** derived from a master password (via Argon2id KDF).
+*   **Zero-Cloud Storage:** The encrypted vault database (`vault.db`) never leaves the user's device. There is no cloud sync, eliminating remote attack vectors.
+*   **Secure Autofill:** The companion browser extension communicates with the Vault desktop app via a secure local localhost server (`127.0.0.1`), ensuring credentials are never injected into the browser's storage or transmitted over the network.
+*   **Import/Export:** Supports standard CSV formats for easy migration from other managers (Bitwarden, LastPass).
+
+### 🔄 Anti-Keylogger Protection
+
+The Vault integrates with the Desktop Client's security services to provide:
+*   **Clipboard Clearing:** Automatically wipes copied passwords after 30 seconds.
+*   **Obfuscated Input:** Uses protected memory for password entry fields to resist simple memory scrapers.
+
+---
+
+## 11. Tier System
 
 ### 📋 Tier Comparison
 
@@ -614,20 +620,18 @@ The Keeper VPS is the central coordination server operating as a **Tor hidden se
 
 | Function | Description |
 |----------|-------------|
-| 👤 **User Management** | Registration, approval, whitelist |
+| 👤 **User Management** | Registration, whitelist sync |
 | 💳 **Payment Processing** | Stripe and Solana verification |
-| 🔄 **Feed Replication** | Master node for Hypercore sync |
-| 🏷️ **Tier Management** | Subscription assignment |
+| 🔄 **Feed Replication** | Master node for Hypercore sync (hosts, whitelist) |
+
+> **Note V2:** Tier management and rewards are now handled **locally** by the daemon. The Keeper no longer processes these.
 
 ### 🔌 API Endpoints
 
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
 | `/api/whitelist/check/:pubkey` | GET | Whitelist verification |
-| `/api/user/tier` | GET | Tier lookup |
-| `/api/user/approve` | POST | User approval |
-| `/api/rewards` | GET | Reward balance |
-| `/api/rewards/claim` | POST | Daily claim |
+| `/api/network-status` | GET | Network stats |
 
 ---
 
@@ -641,10 +645,7 @@ The Keeper VPS is the central coordination server operating as a **Tor hidden se
 │                                                              │
 │   HOSTS      │ { host_pubkey, onion, bandwidth, score }     │
 │   WHITELIST  │ { pubkey, role, flags, timestamp }           │
-│   TIERS      │ { pubkey, tier, features, expires_at, sig }  │
-│   REWARDS    │ { total, lastClaim, claimCount, wallet }     │
-│   USERS      │ { pubkey, wallets, metadata }                │
-│   CLAIMS     │ { pubkey, amount, timestamp, tx }            │
+│   CLAIMS     │ { pubkey, amount, streak, timestamp }        │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -662,7 +663,6 @@ The Keeper VPS is the central coordination server operating as a **Tor hidden se
 | `9053` | DNS | Tor DNS | DNS over Tor |
 | `9081` | SOCKS5 | SOCKS Proxy | Application proxy |
 | `9124` | HTTP | Daemon API | Client-daemon IPC |
-| `9126` | HTTP | ZKP Proxy | ZK proof generation |
 
 ### 📁 File Storage (Windows)
 
@@ -670,6 +670,7 @@ The Keeper VPS is the central coordination server operating as a **Tor hidden se
 %APPDATA%\lastparadox\vpn\data\
 ├── user-secret.json          # Plaintext (for daemon)
 ├── user-secret.encrypted     # DPAPI encrypted
+├── ticket.json               # Ed25519 signed tier ticket
 ├── cache\                    # LevelDB cache
 └── hypercore\                # Hyperbee feeds
 ```
@@ -751,13 +752,13 @@ v2.0 ░░░░░░░░░░░░░░░░░░░░   0%  📋 Pla
 
 The ultimate goal is to remove the Keeper Master as a central dependency.
 
-*   **Current State (Hybrid):** Keeper acts as a "Benevolent Dictator" for bootstrap and initial trust.
-*   **Target State (DAO Grid):**
-    *   **Distributed Validation:** Use `redeemCouponLocal` so ANY Premium Writer can validate a new user via the Admin Public Key.
-    *   **Distributed Promotion:** Use `addWriterLocal` for decentralized voting/promotion of new Writers.
-    *   **Result:** The network survives peer-to-peer even if the central Keeper infrastructure is removed.
-
-> **Legal Note:** Writer promotion and coupon validation do not grant any control over traffic, routing, or user activity, and remain strictly limited to swarm metadata and uptime verification.
+*   **Current State (V2 Local-Only):**
+    *   ✅ Ed25519 signed ticket for tier verification (fully offline)
+    *   ✅ Killstreak rewards processed locally by daemon
+    *   ✅ Keeper reduced to registry role (hosts, whitelist sync)
+*   **Remaining Work:**
+    *   🔄 **Full P2P Host Discovery:** Remove Keeper dependency for host list.
+    *   **Result:** The network survives fully peer-to-peer. No central authority.
 
 > *Roadmap is aspirational and subject to change.*
 
@@ -769,12 +770,12 @@ The ultimate goal is to remove the Keeper Master as a central dependency.
 
 ## 17. Security Considerations
 
-### 🔐 ZK Circuit Trusted Setup
+### 🔐 Ed25519 Key Management
 
-- Powers of Tau ceremony
-- Circuit-specific Phase 2
-- Verification key publication
-- **Recommendation**: External audit before production
+- ADMIN_TIER_PUBKEY hardcoded in daemon and Flutter client
+- Corresponding private key held exclusively on LandingLast site
+- Ticket signatures verified offline — no trusted setup required
+- **Recommendation**: Key rotation mechanism for future versions
 
 ### ⚠️ Known Limitations
 
@@ -838,7 +839,7 @@ The ultimate goal is to remove the Keeper Master as a central dependency.
 
 <table>
 <tr>
-<td align="center">🔐<br/><strong>Local ZK Proofs</strong></td>
+<td align="center">🔐<br/><strong>Ed25519 Tickets</strong></td>
 <td align="center">🔗<br/><strong>Hypercore Routing</strong></td>
 <td align="center">🧅<br/><strong>Tor Integration</strong></td>
 <td align="center">🛡️<br/><strong>Defense-in-Depth</strong></td>
@@ -857,8 +858,8 @@ The ultimate goal is to remove the Keeper Master as a central dependency.
 | Field | Value |
 |-------|-------|
 | **Type** | Technical Design Draft — Living Whitepaper |
-| **Version** | 2.0-draft |
-| **Updated** | December 2025 |
+| **Version** | 3.0-draft |
+| **Updated** | February 2026 |
 | **Maintainers** | LastParadox Core Team |
 
 ---
@@ -893,7 +894,7 @@ The software is provided "as is" for privacy-conscious users who understand the 
 </p>
 
 <p align="center">
-  <sub>© 2025 LastParadox Project — All rights reserved</sub><br/>
+  <sub>© 2025-2026 LastParadox Project — All rights reserved</sub><br/>
   <sub>See <a href="./LEGAL.md">LEGAL.md</a> for full terms</sub>
 </p>
 

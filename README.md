@@ -3,8 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Phase%200%20(Building)-7D4698?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Status-Phase%200%20(V1.2%20Production)-7D4698?style=for-the-badge" alt="Status"/>
   <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License"/>
+  <img src="https://img.shields.io/badge/No%20Logs-Guaranteed-00C853?style=for-the-badge" alt="No Logs"/>
   <img src="https://img.shields.io/badge/Token-None%20Yet-gray?style=for-the-badge" alt="Token"/>
 </p>
 
@@ -25,7 +26,7 @@
 </h3>
 
 <p align="center">
-  <strong>Decentralized VPN • Tor-Powered • Zero-Knowledge • Community-Governed</strong>
+  <strong>Decentralized VPN • Tor-Powered • Ed25519 Signed Tickets • Community-Governed</strong>
 </p>
 
 ---
@@ -57,9 +58,9 @@ Unlike traditional VPNs that ask you to *trust* their "no-logs" promises, LastPa
 <sub>P2P routing, no central servers, encrypted mesh</sub>
 </td>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/🔐-ZK--SNARKs-00D4AA?style=for-the-badge" alt="ZK"/><br/>
-<strong>Zero-Knowledge Auth</strong><br/>
-<sub>Prove membership without revealing identity</sub>
+<img src="https://img.shields.io/badge/🔐-Ed25519-00D4AA?style=for-the-badge" alt="Ed25519"/><br/>
+<strong>Signed Ticket Auth</strong><br/>
+<sub>Ed25519 signed tickets verified locally, offline</sub>
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/🗄️-HyperBee-4A90D9?style=for-the-badge" alt="HyperBee"/><br/>
@@ -75,13 +76,16 @@ Unlike traditional VPNs that ask you to *trust* their "no-logs" promises, LastPa
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| 🧅 **Tor Integration** | Privacy by default with `.onion` circuit routing | ✅ Live |
+| 🧅 **Tor Integration** | Privacy by default with `.onion` circuit routing | ✅ Live (v1.2) |
 | 🌐 **HyperNodes** | Encrypted, low-latency P2P routing | ✅ Live |
-| 🗄️ **HyperBee Storage** | Decentralized metadata & protocol state | ✅ Live |
-| 🔐 **ZK Authentication** | zk-SNARK login — no identity exposed | ✅ Live |
+| 🗄️ **HyperBee Storage** | Decentralized P2P data sync (hosts, rewards) | ✅ Live |
+| 🔐 **Ed25519 Ticket Auth** | Signed tickets verified offline — no server trust | ✅ Live |
 | 🛡️ **DNS Leak Protection** | All DNS routed through Tor | ✅ Live |
 | ⚡ **Kill Switch** | Auto-block traffic if VPN drops | ✅ Live |
-| 💎 **TUN Mode (Premium)** | Full kernel VPN routing | 🔄 Beta |
+| 💎 **TUN Mode (Premium)** | Full kernel VPN routing with WinTun | ✅ Live |
+| 🏆 **Daily Rewards** | 7-day streak system with progressive claims | ✅ Live (v1.2) |
+| 💰 **HD Wallets** | Auto-generated Ethereum + Solana wallets | ✅ Live (v1.2) |
+| 🔐 **Vault System** | Encrypted password/secret storage | ✅ Live |
 | 🧩 **DAO Governance** | Community proposals & voting | 🔄 Building |
 
 ---
@@ -96,11 +100,11 @@ Unlike traditional VPNs that ask you to *trust* their "no-logs" promises, LastPa
 > **This repository documents the LastParadox protocol and architecture.**
 > It is a **reference implementation** and cannot be used as a production VPN system.
 >
-> The source code provided below is a **non-functional skeleton** intended for security auditing and transparency. Critical implementation details (anti-sybil mechanics, exact ZK circuits, and writer consensus rules) are omitted for security and to prevent malicious cloning.
+> The source code provided below is a **non-functional skeleton** intended for security auditing and transparency. Critical implementation details (anti-sybil mechanics, Ed25519 key management, and reward systems) are omitted for security and to prevent malicious cloning.
 
-*   [**lastvpn.ts**](./src-preview/hyper-node/src/hyper/lastvpn.ts) — The interface definitions for our distributed consensus and writer promotion logic.
-    *   *Status: Interfaces Only (Implementation Hidded)*
-*   [**server-hyper.ts**](./src-preview/hyper-node/src/server-hyper.ts) — The API contract for the ZK Auth and Tor routing gateway.
+*   [**lastvpn.ts**](./src-preview/hyper-node/src/hyper/lastvpn.ts) — The interface definitions for the Hyperswarm P2P layer.
+    *   *Status: Interfaces Only (Implementation Hidden)*
+*   [**server-hyper.ts**](./src-preview/hyper-node/src/server-hyper.ts) — The API contract for the Tor routing gateway and rewards system.
     *   *Status: Interfaces Only (Implementation Hidden)*
 
 ### Why is the code "dead"?
@@ -110,76 +114,131 @@ Our goal is to prove **how** we protect your data (Zero-Knowledge, Local-First) 
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture — V2 (Local-First)
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        LASTPARADOX NETWORK                          │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│    ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐ │
-│    │  Flutter │     │  Node.js │     │   Tor    │     │  Keeper  │ │
-│    │  Desktop │◄───►│  Daemon  │◄───►│  SOCKS5  │◄───►│ (.onion) │ │
-│    │    UI    │     │ (Fastify)│     │          │     │          │ │
-│    └──────────┘     └──────────┘     └──────────┘     └──────────┘ │
-│          │                │                                        │
-│          │                ▼                                        │
-│          │         ┌─────────────────────────┐                     │
-│          │         │      Hypercore          │                     │
-│          │         │  ┌─────────┐ ┌────────┐ │                     │
-│          │         │  │Hyperbee │ │Swarm   │ │                     │
-│          │         │  │ (Data)  │ │ (P2P)  │ │                     │
-│          │         │  └─────────┘ └────────┘ │                     │
-│          │         └─────────────────────────┘                     │
-│          │                                                         │
-│          ▼                                                         │
-│    ┌──────────┐                                                    │
-│    │ ZK Proofs│  ◄── Local generation, never uploaded              │
-│    │(snarkjs) │                                                    │
-│    └──────────┘                                                    │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────┐
+│                     LASTPARADOX NETWORK (V1.2)                       │
+├──────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────────┐        ┌─────────────────────────┐                │
+│  │   Flutter    │        │    Node.js Daemon       │                │
+│  │  Desktop UI  │◄──────►│  (Fastify, Local)       │                │
+│  │  (Windows)   │        │  ┌──────────────────┐   │                │
+│  └──────────────┘        │  │ • Tor Manager    │   │                │
+│         │                │  │ • SOCKS5 Proxy   │   │                │
+│         │                │  │ • Hyperswarm     │   │                │
+│         │                │  │ • P2P Sync       │   │                │
+│         │                │  └──────────────────┘   │                │
+│         │                └─────────────────────────┘                │
+│         │                         │                                │
+│         ▼                         ▼                                │
+│    ┌─────────────┐        ┌──────────────────┐                    │
+│    │ user-secret │        │   LandingLast    │                    │
+│    │    .json    │        │   (Site + API)   │                    │
+│    │ (DPAPI)     │        │                  │                    │
+│    │ ┌─────────┐ │        │  • Issue tickets │                    │
+│    │ │Ticket   │ │        │  • Generate      │                    │
+│    │ │(signed) │ │        │    coupons       │                    │
+│    │ │Wallet   │ │        │  • Stripe        │                    │
+│    │ │(ETH+SOL)│ │        └──────────────────┘                    │
+│    │ └─────────┘ │                                                │
+│    └─────────────┘                                                │
+│         │                                                         │
+│         ▼ (Ed25519 offline verification)                          │
+│    ┌──────────────────────────────────────────┐                  │
+│    │        TIER VERIFICATION (Local)         │                  │
+│    │  STANDARD ← Ticket from Site             │                  │
+│    │  PREMIUM  ← Signed Ed25519 + TUN Mode    │                  │
+│    └──────────────────────────────────────────┘                  │
+│                                                                   │
+└──────────────────────────────────────────────────────────────────────┘
 
 Traffic Flow:
-YOU ──► TOR ──► HYPERNODE ──► EXIT ──► INTERNET
-  │                 │
-  └── ZK Proof ─────┘ (identity never leaked)
+┌─────────────┐     ┌──────────────┐     ┌────────┐     ┌──────────┐
+│   User PC   │────►│Tor (Daemon)  │────►│Keeper  │────►│ Internet │
+│             │     │(SOCKS 9124)  │     │.onion  │     │          │
+└─────────────┘     └──────────────┘     └────────┘     └──────────┘
+       │                    │                   │
+       └──────────────────►│◄───────────────────┘
+         Ed25519 Ticket    │
+         (verified once)   Hyperswarm P2P Sync
 ```
+
+**Key Changes (V2 Architecture):**
+- ✅ **Local-Only Tier Verification**: No Keeper required for tier checks
+- ✅ **Offline-First**: Ticket signed locally, verified offline
+- ✅ **P2P Sync**: Hosts, rewards replicated via Hyperswarm (not Keeper)
+- ✅ **No Coupon System**: Deprecated (was V1 Autobase/Antigravity)
+- ✅ **Direct Payment**: Stripe → Ticket → Deep Link → Install
 
 ---
 
-## 📊 Project Status
+## 📊 Project Status — V1.2 Release
 
 ```
-Phase 0 ████████████████░░░░ 80%  ← CURRENT
+Phase 0 ██████████████████░░ 90%  ← CURRENT (V1.2)
 Phase 1 ░░░░░░░░░░░░░░░░░░░░  0%
 Phase 2 ░░░░░░░░░░░░░░░░░░░░  0%
 ```
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| **Phase 0** | Core VPN, Tor, Hypercore, ZK Auth, TUN | 🔄 In Progress |
-| **Phase 1** | DAO governance, audits, multi-platform | ⏳ Planned |
-| **Phase 2** | Token creation (if DAO approves) | 🔮 Future |
+| **Phase 0** | ✅ Core VPN (Tor, P2P), Wallet, Daily Rewards, Vault | 🎉 **V1.2 Live** |
+| **Phase 1** | 🔄 DAO governance, audits, multi-platform (Linux, macOS) | ⏳ Q2 2026 |
+| **Phase 2** | Token creation (if DAO approves) | 🔮 2026+ |
+
+### What's New in V1.2
+- 🏆 **Daily Rewards System**: 7-day streak with progressive payouts
+- 💰 **HD Wallets**: Auto-generated Ethereum (ERC-20) + Solana (SPL) wallets
+- 🏠 **V2 Architecture**: Local-first, offline ticket verification
+- 🧅 **Improved Tor**: Better relay selection, faster connections
+- 🔐 **Vault Enhancements**: Password manager with Firefox auto-fill
+- 📦 **Package Rename**: `lastparadox_vpn` (better visibility in Task Manager)
 
 > **Note:** Token creation requires DAO vote. No token exists today.
 
 ---
 
-## 💎 Contribution Tiers
+## 💎 Contribution Tiers (V1.2)
 
-> ⚠️ **Important:** Contributions are **service payments**, not investments.  
-> See [LEGAL.md](./LEGAL.md) for full terms.
+> ⚠️ **Important:** Contributions are **service payments**, not investments.
+> No tokens exist yet. See [LEGAL.md](./LEGAL.md) & [TOKENOMICS.md](./TOKENOMICS.md) for full terms.
 
-| Tier | Price | What You Get |
-|------|-------|--------------|
-| 🔹 **Supporter** | $4/year | Basic proxy access, community membership |
-| 🔸 **Governance** | $9/year | Full app access, voting rights |
-| 💎 **Builder** | $50+ | Early features, priority voice, builder recognition |
+### Tier Structure
+
+| Tier | Duration | Price | What You Get |
+|------|----------|-------|--------------|
+| 🔹 **Supporter** | 1 Year | $4 | Browser proxy + community membership |
+| 🔸 **Governance** | 1 Year | $9 | Full app access + voting rights (1 year) |
+| 💎 **Builder** | 1 Year | $50 | Early beta features + priority voice + recognition |
+| 👑 **Founder** | Lifetime | $999 | All features forever + DAO seat proposal |
+
+### What's Included (All Tiers)
+
+**Immediately:**
+- ✅ Working VPN app (Tor-routed)
+- ✅ TUN kernel mode (Premium tiers)
+- ✅ Vault password manager
+- ✅ HD Wallets (Ethereum + Solana)
+- ✅ Daily rewards & streak system
+- ✅ P2P network participation
+
+**Future (Phase 1+, DAO approval required):**
+- 🔮 Token allocation (if community votes yes)
+- 🔮 DAO governance participation
+- 🔮 Treasury share voting
+- 🔮 Protocol upgrade proposals
+
+### Payment Methods
+- 💳 **Stripe**: Credit card, Apple Pay, Google Pay
+- 🌐 **OnRamp**: Crypto to fiat conversion available
+- 📧 Contact: `contact@lastparadox.xyz` for custom payment plans
 
 <p align="center">
   <strong>No tokens. No presale. No promises.</strong><br/>
-  <sub>Just working software and community governance.</sub>
+  <sub>Just working software and community governance.</sub><br/>
+  <sub>All contributions are service payments for VPN access, not securities.</sub>
 </p>
 
 ---
@@ -252,7 +311,7 @@ Phase 2 ░░░░░░░░░░░░░░░░░░░░  0%
 </p>
 
 <p align="center">
-  <sub>© 2024-2025 LastParadox Project</sub><br/>
+  <sub>© 2024-2026 LastParadox Project</sub><br/>
   <sub>Founder: <strong>Last_Exit</strong></sub><br/>
   <sub>All rights reserved — See <a href="./LEGAL.md">LEGAL.md</a></sub>
 </p>
